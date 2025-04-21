@@ -276,6 +276,15 @@ class MetodSQL:
         return likes_memory.get((liker_id, liked_id), False)
 
     @staticmethod
+    async def unblock_user(session, user_id: int):
+        await session.execute(
+            update(RegisterUser)
+            .where(RegisterUser.user_name == user_id)
+            .values(is_blocked=False)
+        )
+        await session.commit()
+
+    @staticmethod
     def check_mutual_like(liker_id: int, liked_id: int):
         return likes_memory.get((liked_id, liker_id), False)
 

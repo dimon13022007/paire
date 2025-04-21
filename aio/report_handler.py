@@ -46,7 +46,10 @@ async def report_callback(callback: CallbackQuery, state: FSMContext):
     )
 
     kb = InlineKeyboardMarkup(inline_keyboard=[
-        [InlineKeyboardButton(text="🚫 Заблокировать", callback_data=f"block_{reported_id}")]
+        [
+            InlineKeyboardButton(text="🚫 Заблокировать", callback_data=f"block_{reported_id}"),
+            InlineKeyboardButton(text="🔓 Разблокировать", callback_data=f"unblock_{reported_id}")
+        ]
     ])
 
     if reported_user.img:
@@ -67,3 +70,13 @@ async def block_callback(callback: CallbackQuery):
 
     await callback.answer("✅ Пользователь заблокирован")
     await callback.message.edit_text(f"🔒 Пользователь {user_id} заблокирован.")
+
+@router.callback_query(F.data.startswith("unblock_"))
+async def unblock_callback(callback: CallbackQuery):
+    user_id = int(callback.data.split("_")[1])
+
+    async with async_session() as session:
+        await MetodSQL.unblock_user(session, user_id)
+
+    await callback.answer("✅ Пользователь разблокирован")
+    await callback.message.edit_text(f"🔓 Пользователь {user_id} разблокирован.")
