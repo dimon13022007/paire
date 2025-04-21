@@ -69,7 +69,14 @@ async def block_callback(callback: CallbackQuery):
         await MetodSQL.block_user(session, user_id)
 
     await callback.answer("✅ Пользователь заблокирован")
-    await callback.message.edit_text(f"🔒 Пользователь {user_id} заблокирован.")
+
+    # Заменим кнопку только на "Разблокировать"
+    kb = InlineKeyboardMarkup(inline_keyboard=[
+        [InlineKeyboardButton(text="🔓 Разблокировать", callback_data=f"unblock_{user_id}")]
+    ])
+
+    await callback.message.edit_reply_markup(reply_markup=kb)
+
 
 @router.callback_query(F.data.startswith("unblock_"))
 async def unblock_callback(callback: CallbackQuery):
@@ -79,4 +86,12 @@ async def unblock_callback(callback: CallbackQuery):
         await MetodSQL.unblock_user(session, user_id)
 
     await callback.answer("✅ Пользователь разблокирован")
-    await callback.message.edit_text(f"🔓 Пользователь {user_id} разблокирован.")
+
+    # Вернём обе кнопки обратно
+    kb = InlineKeyboardMarkup(inline_keyboard=[
+        [
+            InlineKeyboardButton(text="🚫 Заблокировать", callback_data=f"block_{user_id}"),
+            InlineKeyboardButton(text="🔓 Разблокировать", callback_data=f"unblock_{user_id}")
+        ]
+    ])
+    await callback.message.edit_reply_markup(reply_markup=kb)
