@@ -20,6 +20,7 @@ from aio.report_handler import router as router_report
 from aiogram import Dispatcher
 from aio.middleware.auto_activate import AutoActivateMiddleware
 
+
 dp = Dispatcher()
 
 

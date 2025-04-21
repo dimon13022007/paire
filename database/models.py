@@ -5,6 +5,11 @@ from typing import Optional
 from sqlalchemy import Boolean
 
 
+class UserReportTarget(Base):
+    __tablename__ = "user_report_target"
+
+    user_id: Mapped[int] = mapped_column(BigInteger, primary_key=True)
+    target_id: Mapped[int] = mapped_column(BigInteger)
 
 class ReferalCode(Base):
     __tablename__ = "refcode"

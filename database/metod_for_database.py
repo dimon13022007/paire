@@ -1,6 +1,6 @@
 from .engine import async_sessions
-from .models import RegisterUser, Lang, ReferalCode
-from sqlalchemy import select, update
+from .models import RegisterUser, Lang, ReferalCode, UserReportTarget
+from sqlalchemy import select, update, delete
 import logging
 from pydantic import BaseModel
 from sqlalchemy import func
@@ -282,6 +282,21 @@ class MetodSQL:
             .where(RegisterUser.user_name == user_id)
             .values(is_blocked=False)
         )
+        await session.commit()
+
+    @staticmethod
+    async def set_report_target(session: AsyncSession, user_id: int, target_id: int):
+        await session.merge(UserReportTarget(user_id=user_id, target_id=target_id))
+        await session.commit()
+
+    @staticmethod
+    async def get_report_target(session: AsyncSession, user_id: int) -> Optional[int]:
+        result = await session.get(UserReportTarget, user_id)
+        return result.target_id if result else None
+
+    @staticmethod
+    async def clear_report_target(session: AsyncSession, user_id: int):
+        await session.execute(delete(UserReportTarget).where(UserReportTarget.user_id == user_id))
         await session.commit()
 
     @staticmethod
