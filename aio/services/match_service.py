@@ -33,6 +33,12 @@ async def send_profile_with_buttons(chat_id: int, profile, index: int):
     report_button = InlineKeyboardButton(text="🚫", callback_data=f"report_{profile.user_name}")
     keyboard = InlineKeyboardMarkup(inline_keyboard=[[like_button, dislike_button, sleep_button, report_button]],)
 
+    if view_count > 0 and view_count % 200 == 0:
+        try:
+            await send_advertisement(chat_id)
+        except Exception as e:
+            logger.error(f"Ошибка при отправке рекламы: {e}")
+
     if profile.img:
         logger.debug(f"[{user_id}] 🖼️ Изображение найдено, получаем...")
         img_start = time.time()
