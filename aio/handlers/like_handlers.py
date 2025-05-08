@@ -67,14 +67,14 @@ async def like_callback(callback: CallbackQuery, state: FSMContext):
             ])
 
             mutual_like_markup_for_liked = InlineKeyboardMarkup(inline_keyboard=[
-                [InlineKeyboardButton(text=_("🔁 Продолжить просмотр анкет"), callback_data="search")],
-                [InlineKeyboardButton(text=_("👤 Перейти в профиль"), url=f"tg://user?id={liker_id}")]
+                [InlineKeyboardButton(text=__("🔁 Продолжить просмотр анкет"), callback_data="search")],
+                [InlineKeyboardButton(text=__("👤 Перейти в профиль"), url=f"tg://user?id={liker_id}")]
             ])
 
             await bot.send_message(liker_id, _("✨ У вас взаимный лайк с {name}!").format(name=liked.name))
 
             try:
-                await bot.send_message(liked_id, _("✨ У вас взаимный лайк с {name}!").format(name=liker.name))
+                await bot.send_message(liked_id, __("✨ У вас взаимный лайк с {name}!").format(name=liker.name))
             except Exception as e:
                 logger.warning(f"❌ Не удалось отправить liked_id взаимный лайк: {e}")
 
@@ -128,10 +128,10 @@ async def like_callback(callback: CallbackQuery, state: FSMContext):
 
         await bot.send_message(
             liked_id,
-            _("✨ Вас лайкнули! Хотите посмотреть анкету?"),
+            __("✨ Вас лайкнули! Хотите посмотреть анкету?"),
             reply_markup=InlineKeyboardMarkup(
                 inline_keyboard=[
-                    [InlineKeyboardButton(text=_("👀 Посмотреть анкету"), callback_data=f"view_{liker_id}")]
+                    [InlineKeyboardButton(text=__("👀 Посмотреть анкету"), callback_data=f"view_{liker_id}")]
                 ]
             )
         )

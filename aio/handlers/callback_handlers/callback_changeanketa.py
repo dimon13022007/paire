@@ -133,6 +133,7 @@ async def new_value(message: Message, state: FSMContext):
                     await message.answer(text)
                     user = int(message.from_user.id)
                     await profile(bot, user, message.chat.id, reply_mark=await ChangeRegister.changed_register(user))
+                    return
                 else:
                     text = _("❌ Не удалось обновить возраст. Пожалуйста, попробуйте снова.")
                     await message.answer(text)
@@ -147,9 +148,25 @@ async def new_value(message: Message, state: FSMContext):
             if not await ValidateParam.validate_disc(message):
                 return
 
-        if field_name in "language":
+        if field_name == "language":
             if not await ValidateParam.validate_language(message):
                 return
+
+            new_language = message.text
+
+            result = await MetodSQL.update(user_id=message.from_user.id, field_name=field_name, new_value=new_language)
+
+            if result:
+                text = _("Ваш язык успешно обновлен: {language} ✅").format(language=new_language)
+                await message.answer(text)
+                user_id = message.from_user.id
+                user = int(user_id)
+                await profile(bot, user, message.chat.id,
+                              reply_mark=await ChangeRegister.changed_register(message.from_user.id))
+            else:
+                text = _("❌ Не удалось обновить язык. Пожалуйста, попробуйте снова.")
+                await message.answer(text)
+
 
 
         elif field_name == "img":
