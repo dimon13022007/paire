@@ -88,7 +88,18 @@ async def change_param(callback: CallbackQuery, state: FSMContext):
     elif field_name == "industry":
         text = _(
             "Какое новое значение вы хотите определить?\nТекущее {current}\n"
-            "1) Backend\n2) Front-end\n3) FullStack\n4) GameDev\n5) MobileDev"
+            "1) Backend\n"
+            "2) Front-end\n"
+            "3) FullStack\n"
+            "4) GameDev\n"
+            "5) MobileDev\n"
+            "6) AIDev\n"
+            "7) Telegram Bots\n"
+            "8) AppDev\n"
+            "9) OSDev\n"
+            "10) Cybersecurity\n"
+            "11) Frameworks\n"
+            "12) BlockchainDev"
         ).format(current=result)
         await callback.message.answer(text)
         await state.set_state(NewValue.new_value)
@@ -213,8 +224,16 @@ async def new_value(message: Message, state: FSMContext):
                 2: "Front-end",
                 3: "FullStack",
                 4: "GameDev",
-                5: "MobileDev"
+                5: "MobileDev",
+                6: "AIDev",
+                7: "Telegram Bots",
+                8: "AppDev",
+                9: "OSDev",
+                10: "Cybersecurity",
+                11: "Frameworks",
+                12: "BlockchainDev"
             }
+
             try:
 
                 industry_choice = int(message.text)
@@ -235,7 +254,7 @@ async def new_value(message: Message, state: FSMContext):
                         await message.answer(text)
                         return
                 else:
-                    text = _("❌ Неверный выбор! Пожалуйста, выберите число от 1 до 5.")
+                    text = _("❌ Неверный выбор! Пожалуйста, выберите число от 1 до 12.")
                     await message.answer(text)
                     return
 

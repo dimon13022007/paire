@@ -10,7 +10,7 @@ from text_translete.translate import get_translator
 import gettext
 from aio.keyboards.keyboard_ref import RefCode
 from aio.keyboards.keyboard_for_start import MetodKeyboardInline
-
+from aio.keyboards.filter_keyboard.filter_keyboarad import FilterButton
 
 router = Router()
 
@@ -46,18 +46,9 @@ async def filter_callback(callback: CallbackQuery):
 
     translator = await get_translator(lang_param)
     _ = translator.gettext
-    markup = InlineKeyboardMarkup(inline_keyboard=[
-        [InlineKeyboardButton(text="Backend", callback_data="set_filter_Backend")],
-        [InlineKeyboardButton(text="Front-end", callback_data="set_filter_Frontend")],
-        [InlineKeyboardButton(text="Full Stack", callback_data="set_filter_FullStack")],
-        [InlineKeyboardButton(text="Game Dev", callback_data="set_filter_GameDev")],
-        [InlineKeyboardButton(text="Mobile Dev", callback_data="set_filter_MobileDev")],
-        [InlineKeyboardButton(text=_("Сбросить фильтр"), callback_data="reset_filter")],
-        [InlineKeyboardButton(text=_("Назад 🔙"), callback_data="back_setting_menu")]
-
-    ])
     text = _("Выберите индустрию для фильтрации анкет:")
-    await callback.message.edit_text(text, reply_markup=markup)
+    await callback.message.edit_text(text, reply_markup=await FilterButton.filter_industy(
+                                                                    callback.from_user.id))
 
 
 @router.callback_query(F.data.startswith("set_filter_"))

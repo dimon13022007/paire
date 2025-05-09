@@ -30,7 +30,15 @@ frontend = InlineKeyboardButton(text="Front-end", callback_data="Front-end")
 fullstack = InlineKeyboardButton(text="Full Stack", callback_data="FullStack")
 gamedev = InlineKeyboardButton(text="GameDev", callback_data="GameDev")
 mobiledev = InlineKeyboardButton(text="MobileDev", callback_data="MobileDev")
-
+telegram_bots = InlineKeyboardButton(text=" Telegram Bots", callback_data="TelegramBots")
+ai = InlineKeyboardButton(text=" AIDev", callback_data="AI")
+app_dev = InlineKeyboardButton(text=" AppDev", callback_data="AppDev")
+os_dev = InlineKeyboardButton(text=" OSDev", callback_data="OSDev")
+cybersec = InlineKeyboardButton(text=" Cybersecurity", callback_data="Cybersecurity")
+libraries = InlineKeyboardButton(text=" Libraries", callback_data="Libraries")
+blockchain = InlineKeyboardButton(text=" BlockchainDev", callback_data="BlockchainDev")
+right = InlineKeyboardButton(text="➡️", callback_data="right")
+left = InlineKeyboardButton(text="⬅️", callback_data="left")
 
 
 class MetodKeyboardInline:
@@ -111,9 +119,22 @@ class MetodKeyboardInline:
 
     @staticmethod
     async def industry_button():
-        row_1 = [backend, frontend, fullstack]
-        row_2 = [gamedev,mobiledev]
-        row = [row_1, row_2]
+        row_1 = [backend, frontend]
+        row_2 = [fullstack,mobiledev]
+        row_3 = [gamedev, telegram_bots]
+        row_4 = [right]
+        row = [row_1, row_2, row_3, row_4]
+
         industry = InlineKeyboardMarkup(inline_keyboard=row)
         return industry
 
+    @staticmethod
+    async def industry_right():
+        row_1 = [cybersec, libraries]
+        row_2 = [blockchain, app_dev]
+        row_3 = [ai, os_dev]
+        row_4 = [left]
+        row = [row_1, row_2,row_3, row_4]
+
+        industry = InlineKeyboardMarkup(inline_keyboard=row)
+        return industry
