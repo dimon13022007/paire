@@ -39,6 +39,7 @@ libraries = InlineKeyboardButton(text=" Libraries", callback_data="Libraries")
 blockchain = InlineKeyboardButton(text=" BlockchainDev", callback_data="BlockchainDev")
 right = InlineKeyboardButton(text="➡️", callback_data="right")
 left = InlineKeyboardButton(text="⬅️", callback_data="left")
+nice = InlineKeyboardButton(text="Готово▶️", callback_data="nice")
 
 
 class MetodKeyboardInline:
@@ -82,26 +83,23 @@ class MetodKeyboardInline:
         return start
 
     @staticmethod
-    async def language_button(user_id: int):
-        lang_param = await MetodSQL.get_language(user_id)
-        print(lang_param)
+    async def language_button(selected: list[str]):
 
-        translator = await get_translator(lang_param)
-        _ = translator.gettext
-        another_keyboard = InlineKeyboardButton(text=_("Другое"), callback_data="Другое")
+        def mark(name: str) -> InlineKeyboardButton:
+            text = f"{name} ✅" if name in selected else name
+            return InlineKeyboardButton(text=text, callback_data=name)
 
-        rows_first = [python_keyboard, java_keyboard]
-        row_second = [java_script_keyboard, php_keyboard]
-        row_third = [go_keyboard, c_keyboard]
-        row_4 = [csharp_keyboard, swift_keyboard]
-        row_5 = [kotlin_keyboard, r_keyboard]
-        row_6 = [another_keyboard]
+        row_1 = [mark("Python"), mark("Java")]
+        row_2 = [mark("JavaScript"), mark("PHP")]
+        row_3 = [mark("Go"), mark("C,C++")]
+        row_4 = [mark("C#"), mark("Swift")]
+        row_5 = [mark("Kotlin"), mark("R")]
+        row_6 = [InlineKeyboardButton(text="Готово▶️", callback_data="success")]
 
-        row = [rows_first, row_second, row_third, row_4, row_5, row_6]
-
-        language = InlineKeyboardMarkup(inline_keyboard=row
-        )
-        return language
+        keyboard = InlineKeyboardMarkup(inline_keyboard=[
+            row_1, row_2, row_3, row_4, row_5,row_6
+        ])
+        return keyboard
 
     @staticmethod
     async def another_button(user_id: int):
@@ -118,23 +116,31 @@ class MetodKeyboardInline:
         return another
 
     @staticmethod
-    async def industry_button():
-        row_1 = [backend, frontend]
-        row_2 = [fullstack,mobiledev]
-        row_3 = [gamedev, telegram_bots]
-        row_4 = [right]
-        row = [row_1, row_2, row_3, row_4]
+    async def industry_button(selected: list[str]):
+        def mark(name: str) -> InlineKeyboardButton:
+            text = f"{name} ✅" if name in selected else name
+            return InlineKeyboardButton(text=text, callback_data=name)
 
-        industry = InlineKeyboardMarkup(inline_keyboard=row)
-        return industry
+        row_1 = [mark("Backend"), mark("Front-end")]
+        row_2 = [mark("FullStack"), mark("MobileDev")]
+        row_4 = [InlineKeyboardButton(text="➡️", callback_data="right")]
+        row_5 = [InlineKeyboardButton(text="▶️", callback_data="nice")]
+
+        return InlineKeyboardMarkup(inline_keyboard=[row_1, row_2, row_4, row_5])
 
     @staticmethod
-    async def industry_right():
-        row_1 = [cybersec, libraries]
-        row_2 = [blockchain, app_dev]
-        row_3 = [ai, os_dev]
-        row_4 = [left]
-        row = [row_1, row_2,row_3, row_4]
+    async def industry_right(selected: list[str]):
+        def mark(name: str) -> InlineKeyboardButton:
+            text = f"{name} ✅" if name in selected else name
+            return InlineKeyboardButton(text=text, callback_data=name)
 
-        industry = InlineKeyboardMarkup(inline_keyboard=row)
-        return industry
+        row_1 = [mark("Cybersecurity"), mark("Libraries")]
+        row_2 = [mark("BlockchainDev"), mark("AppDev")]
+        row_3 = [mark("AI"), mark("OSDev")]
+        row_3_0 = [mark("GameDev"), mark("TelegramBots")]
+        row_4 = [InlineKeyboardButton(text="⬅️", callback_data="left")]
+        row_5 = [InlineKeyboardButton(text="▶️", callback_data="nice")]
+
+
+        return InlineKeyboardMarkup(inline_keyboard=[row_1, row_2,row_3_0, row_3, row_4, row_5])
+

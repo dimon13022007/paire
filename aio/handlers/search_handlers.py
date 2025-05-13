@@ -60,7 +60,8 @@ async def search_callback(callback: CallbackQuery, state: FSMContext):
 
         liked_users.pop(user_id, None)
 
-        industry_filter = data.get("industry_filter")
+        # industry_filter = data.get("industry_filter")
+        industry_filter = await MetodSQL.see_filter(callback.from_user.id)
 
         if industry_filter:
             profiles = await MetodSQL.search_profiles(exclude_user_id=user_id, industry=industry_filter)

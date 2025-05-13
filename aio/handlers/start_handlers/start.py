@@ -106,6 +106,7 @@ async def activate_profile(message: Message):
 
 @router.callback_query(F.data == "skips")
 async def skip_callback(callback: CallbackQuery, state: FSMContext):
+    await callback.answer()
     lang_param = await MetodSQL.get_language(callback.from_user.id)
     print(lang_param)
 
@@ -132,6 +133,7 @@ async def check_likes_for_user(user_id: int):
 
 @router.callback_query(F.data.startswith("next_profile_"))
 async def next_profile_callback(callback: CallbackQuery, state: FSMContext):
+    await callback.answer()
     lang_param = await MetodSQL.get_language(callback.from_user.id)
     print(lang_param)
 
@@ -187,6 +189,7 @@ async def language_start(message: Message):
     "kk"
 })
 async def start_command(callback: CallbackQuery):
+    await callback.answer()
     lang = callback.data
     await MetodSQL.unieuq_add(ParamLang(user_name=callback.from_user.id, lang=lang), object_class=Lang)
     lang_param = await MetodSQL.get_language(callback.from_user.id)
@@ -218,6 +221,7 @@ async def start_command(callback: CallbackQuery):
 
 @router.callback_query(F.data == "city")
 async def location_city(callback: CallbackQuery, state: FSMContext):
+    await callback.answer()
     await callback.message.edit_reply_markup(reply_markup=None)
 
     print("Callback_Id",callback.from_user.id)
@@ -274,6 +278,7 @@ async def register_name(message: Message, state:FSMContext):
 @router.message(RegisterState.age)
 async def register_age(message: Message, state:FSMContext):
 
+
     if not await ValidateParam.validate_age(message):
         return
 
@@ -302,10 +307,13 @@ async def register_discription(message: Message, state: FSMContext):
     translator = await get_translator(lang_param)
     _ = translator.gettext
 
+    data = await state.get_data()
+    selected = data.get("language", [])
+
     await state.update_data(text_disc=message.text)
     await state.set_state(RegisterState.language)
     text = _("Какой у вас язык программирования?👨‍💻")
-    await message.answer(text, reply_markup= await MetodKeyboardInline.language_button(message.from_user.id))
+    await message.answer(text, reply_markup= await MetodKeyboardInline.language_button(selected))
 
 
 @router.message(RegisterState.language)
@@ -327,10 +335,8 @@ async def register_language(message:Message, state: FSMContext):
     await message.answer(text, parse_mode="MarkdownV2", reply_markup=await MetodKeyboardInline.another_button(message.from_user.id))
 
 @router.message(RegisterState.img)
-async def register_img(message:Message, state: FSMContext):
+async def register_img(message: Message, state: FSMContext):
     lang_param = await MetodSQL.get_language(message.from_user.id)
-    print(lang_param)
-
     translator = await get_translator(lang_param)
     _ = translator.gettext
 
@@ -338,40 +344,41 @@ async def register_img(message:Message, state: FSMContext):
         return
 
     img = message.photo[-1].file_id
-
     file = await bot.download(img)
     img_bytes = file.read()
 
     await state.update_data(img=img_bytes)
 
     data = await state.get_data()
-    user_name = message.from_user.id
+    industries = data.get("industries", [])
+    languages = data.get("language", [])
 
     await asyncio.create_task(MetodSQL.unieuq_add(
         data=Param(
-            user_name=user_name,
+            user_name=message.from_user.id,
             city=data.get("city"),
             name=data.get("name"),
             age=data.get("age"),
             text_disc=data.get("text_disc"),
-            language=data.get("language"),
-            industry=data.get("industry"),
+            language=languages[0] if len(languages) > 0 else None,
+            language_2 = languages[1] if len(languages) > 1 else None,
+            industry=industries[0] if len(industries) > 0 else None,
+            industry_1=industries[1] if len(industries) > 1 else None,
+            industry_2=industries[2] if len(industries) > 2 else None,
             img=data.get("img")
         ),
         object_class=RegisterUser
     ))
-    await state.clear()
-    text = _("""
-    Ты зарегестрировался !
-От как выглядит твоя анкета!""")
-    await message.answer(text)
-
-    user_id = message.from_user.id
-    user = int(user_id)
 
     await state.clear()
-    await profile(bot,user, message.chat.id, reply_mark=await ChangeRegister.changed_register(message.from_user.id))
+    await message.answer(_("Ты зарегестрировался !\nВот как выглядит твоя анкета!"))
 
+    await profile(
+        bot,
+        message.from_user.id,
+        message.chat.id,
+        reply_mark=await ChangeRegister.changed_register(message.from_user.id)
+    )
 
 
 async def main_context():

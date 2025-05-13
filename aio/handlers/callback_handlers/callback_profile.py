@@ -2,12 +2,11 @@ from aiogram import Router
 from aio.func.func_profile import profile
 from aio.bot_token import bot
 from aio.keyboards.keyboard_for_restart_register import ChangeRegister
-from aiogram.types import CallbackQuery, InlineKeyboardMarkup, InlineKeyboardButton
+from aiogram.types import CallbackQuery
 from aiogram.fsm.context import FSMContext
 from aiogram import F
 from database.metod_for_database import MetodSQL
 from text_translete.translate import get_translator
-import gettext
 from aio.keyboards.keyboard_ref import RefCode
 from aio.keyboards.keyboard_for_start import MetodKeyboardInline
 from aio.keyboards.filter_keyboard.filter_keyboarad import FilterButton
@@ -38,17 +37,20 @@ async def profile_handler(callback: CallbackQuery):
 
 
 @router.callback_query(F.data == "filter")
-async def filter_callback(callback: CallbackQuery):
+async def filter_callback(callback: CallbackQuery, state: FSMContext):
     await callback.answer("")
 
     lang_param = await MetodSQL.get_language(callback.from_user.id)
     print(lang_param)
 
+    data = await state.get_data()
+    selected = data.get("language", [])
+
     translator = await get_translator(lang_param)
     _ = translator.gettext
     text = _("Выберите индустрию для фильтрации анкет:")
     await callback.message.edit_text(text, reply_markup=await FilterButton.filter_industy(
-                                                                    callback.from_user.id))
+                                                                    callback.from_user.id, selected))
 
 
 @router.callback_query(F.data.startswith("set_filter_"))

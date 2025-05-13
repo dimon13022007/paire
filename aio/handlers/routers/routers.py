@@ -17,6 +17,7 @@ from aio.handlers.callback_handlers.callback_settings import router as router_se
 from aio.handlers.callback_handlers.callback_profile import router as router_callback_profile
 from aio.handlers.callback_handlers.callback_back.callback_main_menu import router as router_back_main
 from aio.report_handler import router as router_report
+from aio.handlers.callback_handlers.change_lang_ind.change_industry import router as router_indusry_land_change
 from aiogram import Dispatcher
 from aio.middleware.auto_activate import AutoActivateMiddleware
 
@@ -26,6 +27,7 @@ dp = Dispatcher()
 
 router = Router(name="global_router")
 router.include_router(router_report)
+router.include_router(router_indusry_land_change)
 router.include_router(router_start)
 router.include_router(router_callback)
 router.include_router(router_callback_industry)

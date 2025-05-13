@@ -13,11 +13,19 @@ import gettext
 
 logger = logging.getLogger(__name__)
 
-
 def build_profile_text(profile) -> str:
+    industries = [profile.industry, profile.industry_1, profile.industry_2]
+    industries = [i.strip() for i in industries if i and i.strip()]
+    industry_text = " | ".join(industries) if industries else "No industry"
+
+    languages = [profile.language, profile.language_1]
+    languages = [l.strip() for l in languages if l and l.strip()]
+    language_text = ", ".join(languages) if languages else "No language"
+
     if not profile.text_disc:
-        return f"{profile.name} ({profile.age})\n{profile.industry} | {profile.language}, {profile.city}"
-    return f"{profile.name} ({profile.age})\n{profile.industry} | {profile.language}, {profile.text_disc}, {profile.city}"
+        return f"{profile.name} ({profile.age})\n{industry_text} | {language_text}, {profile.city}"
+
+    return f"{profile.name} ({profile.age})\n{industry_text} | {language_text}, {profile.text_disc}, {profile.city}"
 
 
 @router.callback_query(F.data.startswith("like_"))

@@ -6,7 +6,6 @@ from database.metod_for_database import MetodSQL
 from aio.bot_token import bot
 import io
 from text_translete.translate import get_translator
-import gettext
 
 
 @router.callback_query(F.data.startswith("view_"))
@@ -22,17 +21,22 @@ async def view_profile_callback(callback: CallbackQuery, state: FSMContext):
     liker_profile = await MetodSQL.get_user_by_id(liked_id)
 
     if liker_profile:
-        if liker_profile.text_disc == None:
+        industries = liker_profile.industry.split(",") if liker_profile.industry else []
+        industry_text = " | ".join(industries) if industries else "No industry"
+
+        languages = liker_profile.language.split(",") if liker_profile.language else []
+        language_text = ", ".join(languages) if languages else "No language"
+
+        if liker_profile.text_disc is None:
             profile_text = (
                 f"{liker_profile.name} ({liker_profile.age})\n"
-                f"{liker_profile.industry} | {liker_profile.language}, {liker_profile.city}"
+                f"{industry_text} | {language_text}, {liker_profile.city}"
             )
         else:
             profile_text = (
                 f"{liker_profile.name} ({liker_profile.age})\n"
-                f"{liker_profile.industry} | {liker_profile.language}, {liker_profile.text_disc}, {liker_profile.city}"
+                f"{industry_text} | {language_text}, {liker_profile.text_disc}, {liker_profile.city}"
             )
-
 
         buttons = InlineKeyboardMarkup(inline_keyboard=[
             [InlineKeyboardButton(text="👍", callback_data=f"like_{liked_id}"),

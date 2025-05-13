@@ -81,28 +81,17 @@ async def change_param(callback: CallbackQuery, state: FSMContext):
         await state.set_state(NewValue.new_value)
 
     if field_name in "language":
-        text = _("Введите новое значение для {field}\nТекущее: {current}").format(field=field_name, current=result)
-        await callback.message.answer(text)
-        await state.set_state(NewValue.new_value)
+        lang1 = await MetodSQL.get_lang(callback.from_user.id, 1)
+        lang2 = await MetodSQL.get_lang(callback.from_user.id, 2)
+        await callback.message.answer("Вот все вашы выбраные языки программирования",
+                                      reply_markup=await ChangeAnketa.change_language(callback.from_user.id, lang1, lang2))
 
     elif field_name == "industry":
-        text = _(
-            "Какое новое значение вы хотите определить?\nТекущее {current}\n"
-            "1) Backend\n"
-            "2) Front-end\n"
-            "3) FullStack\n"
-            "4) GameDev\n"
-            "5) MobileDev\n"
-            "6) AIDev\n"
-            "7) Telegram Bots\n"
-            "8) AppDev\n"
-            "9) OSDev\n"
-            "10) Cybersecurity\n"
-            "11) Frameworks\n"
-            "12) BlockchainDev"
-        ).format(current=result)
-        await callback.message.answer(text)
-        await state.set_state(NewValue.new_value)
+        ind1 = await MetodSQL.get_industry(callback.from_user.id, 1)
+        ind2 = await MetodSQL.get_industry(callback.from_user.id, 2)
+        ind3 = await MetodSQL.get_industry(callback.from_user.id, 3)
+        await callback.message.answer("Вот все вашы выбраные индустрии",
+                             reply_markup=await ChangeAnketa.change_industry(callback.from_user.id, ind1, ind2, ind3))
 
     elif field_name == "img":
         text = _("Загрузите новое изображение📸")
@@ -160,25 +149,11 @@ async def new_value(message: Message, state: FSMContext):
                 return
 
         if field_name == "language":
-            if not await ValidateParam.validate_language(message):
-                return
-
-            new_language = message.text
-
-            result = await MetodSQL.update(user_id=message.from_user.id, field_name=field_name, new_value=new_language)
-
-            if result:
-                text = _("Ваш язык успешно обновлен: {language} ✅").format(language=new_language)
-                await message.answer(text)
-                user_id = message.from_user.id
-                user = int(user_id)
-                await profile(bot, user, message.chat.id,
-                              reply_mark=await ChangeRegister.changed_register(message.from_user.id))
-            else:
-                text = _("❌ Не удалось обновить язык. Пожалуйста, попробуйте снова.")
-                await message.answer(text)
-
-
+            lang1 = await MetodSQL.get_lang(message.from_user.id, 1)
+            lang2 = await MetodSQL.get_lang(message.from_user.id, 2)
+            await message.answer("Вот все вашы выбраные индустрии",
+                                          reply_markup=await ChangeAnketa.change_language(message.from_user.id, lang1,
+                                                                                          lang2))
 
         elif field_name == "img":
             if not message.photo:
@@ -219,48 +194,10 @@ async def new_value(message: Message, state: FSMContext):
 
 
         elif field_name == "industry":
-            ind = {
-                1: "Backend",
-                2: "Front-end",
-                3: "FullStack",
-                4: "GameDev",
-                5: "MobileDev",
-                6: "AIDev",
-                7: "Telegram Bots",
-                8: "AppDev",
-                9: "OSDev",
-                10: "Cybersecurity",
-                11: "Frameworks",
-                12: "BlockchainDev"
-            }
-
-            try:
-
-                industry_choice = int(message.text)
-
-                if industry_choice in ind:
-                    industry_value = ind[industry_choice]
-
-                    result = await MetodSQL.update(user_id=message.from_user.id, field_name=field_name,
-                                                   new_value=industry_value)
-                    if result:
-                        text = _("Вы выбрали индустрию: {industry_value} ✅").format(industry_value=industry_value)
-                        await message.answer(text)
-                        user_id = message.from_user.id
-                        user = int(user_id)
-                        await profile(bot, user, message.chat.id, reply_mark=await ChangeRegister.changed_register(message.from_user.id))
-                    else:
-                        text = _("❌ Не удалось обновить индустрию. Пожалуйста, попробуйте снова.")
-                        await message.answer(text)
-                        return
-                else:
-                    text = _("❌ Неверный выбор! Пожалуйста, выберите число от 1 до 12.")
-                    await message.answer(text)
-                    return
-
-            except ValueError:
-                text = _("❌ Пожалуйста, введите число от 1 до 5.")
-                await message.answer(text)
+            ind1 = await MetodSQL.get_industry(message.from_user.id, 1)
+            ind2 = await MetodSQL.get_industry(message.from_user.id, 2)
+            ind3 = await MetodSQL.get_industry(message.from_user.id, 3)
+            await message.answer("Вот все вашы выбраные индустрии", reply_markup=await ChangeAnketa.change_industry(message.from_user.id, ind1, ind2, ind3))
 
         else:
             new_value = message.text

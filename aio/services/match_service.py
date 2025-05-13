@@ -23,7 +23,20 @@ async def send_profile_with_buttons(chat_id: int, profile, index: int):
     logger.debug(f"[{user_id}] 📊 view_count = {view_count}")
     logger.debug(f"[{user_id}] 👤 Текст анкеты: {profile.city}\n{profile.name} ({profile.age})\n{profile.industry} | {profile.language}, {profile.text_disc or ''}")
 
-    profile_text = f"{profile.city}\n{profile.name} ({profile.age})\n{profile.industry} | {profile.language}"
+    profile_text = f"{profile.city}\n{profile.name} ({profile.age})\n"
+
+    profile_text = f"{profile.city}\n{profile.name} ({profile.age})"
+
+    industries = [profile.industry, profile.industry_1, profile.industry_2]
+    industries = [i.strip() for i in industries if i and i.strip()]
+    if industries:
+        profile_text += "\n" + ", ".join(industries)
+
+    languages = [profile.language, profile.language_2]
+    languages = [l.strip() for l in languages if l and l.strip()]
+    if languages:
+        profile_text += "\n" + ", ".join(languages)
+
     if profile.text_disc:
         profile_text += f", {profile.text_disc}"
 

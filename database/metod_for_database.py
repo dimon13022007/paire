@@ -6,10 +6,12 @@ from pydantic import BaseModel
 from sqlalchemy import func
 from typing import Optional
 from sqlalchemy.ext.asyncio import AsyncSession
+from .models import Filter
+from sqlalchemy import or_
+
 
 logging.basicConfig(level=logging.ERROR, format="%(asctime)s - %(levelname)s - %(message)s")
 logging.basicConfig(level=logging.ERROR, format="%(asctime)s - %(levelname)s - %(message)s")
-# async_session = async_sessionmaker(bind=async_engine, expire_on_commit=False)
 
 
 likes_memory = {}
@@ -44,6 +46,44 @@ class MetodSQL:
         except Exception as e:
             logging.error(f"Ошибка при добавлени или бля обновлении данных в {object_class.__name__}: {e}")
             return None
+
+    @staticmethod
+    async def add_filter(user_id, filter):
+        async with async_sessions() as session:
+            result = await session.execute(
+                select(Filter).where(Filter.user_name == user_id)
+            )
+            existing_entry = result.scalars().first()
+
+            if not existing_entry:
+                new_filter = Filter(user_name=user_id, filter=filter)
+                session.add(new_filter)
+                await session.commit()
+            elif existing_entry.filter != filter:
+                existing_entry.filter = filter
+                await session.commit()
+
+    @staticmethod
+    async def delete_filter(user_id):
+        async with async_sessions() as session:
+            result = await session.execute(
+                select(Filter).where(Filter.user_name == user_id)
+            )
+            existing_entry = result.scalars().first()
+
+            if existing_entry:
+                existing_entry.filter = None
+                await session.commit()
+
+
+    @staticmethod
+    async def see_filter(user_id):
+        async with async_sessions() as session:
+            stmt = await session.execute(
+                select(Filter.filter).where(Filter.user_name==user_id)
+            )
+            res = stmt.scalars().first()
+            return res
 
     @staticmethod
     async def get_language(user_id: int) -> str:
@@ -207,6 +247,53 @@ class MetodSQL:
         return bool(row)
 
     @staticmethod
+    async def get_industry(user_id, num: int):
+        async with async_sessions() as session:
+            try:
+                industry_fields = {
+                    1: RegisterUser.industry,
+                    2: RegisterUser.industry_1,
+                    3: RegisterUser.industry_2
+                }
+
+                if num not in industry_fields:
+                    return None
+
+                field = industry_fields[num]
+
+                result = await session.execute(
+                    select(field).where(RegisterUser.user_name == user_id)
+                )
+                return result.scalars().first()
+
+            except Exception as e:
+                logging.error(f"❌ Помилка при отриманні industry #{num} для {user_id}: {e}")
+                return None
+
+    @staticmethod
+    async def get_lang(user_id, num: int):
+        async with async_sessions() as session:
+            try:
+                industry_fields = {
+                    1: RegisterUser.language,
+                    2: RegisterUser.language_2,
+                }
+
+                if num not in industry_fields:
+                    return None
+
+                field = industry_fields[num]
+
+                result = await session.execute(
+                    select(field).where(RegisterUser.user_name == user_id)
+                )
+                return result.scalars().first()
+
+            except Exception as e:
+                logging.error(f"❌ Помилка при отриманні industry #{num} для {user_id}: {e}")
+                return None
+
+    @staticmethod
     async def search_profiles(exclude_user_id: int = None, **filters) -> list[RegisterUser]:
         try:
             async with async_sessions() as session:
@@ -218,10 +305,27 @@ class MetodSQL:
                 if exclude_user_id:
                     query = query.where(RegisterUser.user_name != exclude_user_id)
 
-                for key, value in filters.items():
-                    column = getattr(RegisterUser, key, None)
-                    if column is not None:
-                        query = query.where(column == value)
+                industries_str = filters.get("industry", "").strip()
+                if industries_str:
+                    print(f"📥 Сировий фільтр по індустріях: {industries_str}")
+
+                    industries = [industry.strip().lower() for industry in industries_str.split(",") if
+                                  industry.strip()]
+                    print(f"🔍 Відібрані індустрії: {industries}")
+
+                    industry_conditions = []
+                    for industry in industries:
+                        print(f"🔗 Додаю умову для індустрії: {industry}")
+                        industry_conditions.append(
+                            or_(
+                                func.lower(RegisterUser.industry).ilike(f"%{industry}%"),
+                                func.lower(RegisterUser.industry_1).ilike(f"%{industry}%"),
+                                func.lower(RegisterUser.industry_2).ilike(f"%{industry}%")
+                            )
+                        )
+
+                    if industry_conditions:
+                        query = query.where(or_(*industry_conditions))
 
                 query = query.order_by(func.random())
                 result = await session.execute(query)

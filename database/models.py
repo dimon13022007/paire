@@ -1,8 +1,8 @@
 from .engine import Base
 from sqlalchemy.orm import Mapped, mapped_column
-from sqlalchemy import LargeBinary, BigInteger
-from typing import Optional
+from sqlalchemy import LargeBinary, BigInteger, JSON
 from sqlalchemy import Boolean
+from typing import Optional
 
 
 class UserReportTarget(Base):
@@ -37,10 +37,21 @@ class RegisterUser(Base):
     age: Mapped[str]
     text_disc: Mapped[Optional[str]]
     language: Mapped[str]
+    language_2: Mapped[Optional[str]]
     industry: Mapped[str]
+    industry_1: Mapped[Optional[str]]
+    industry_2: Mapped[Optional[str]]
     img: Mapped[bytes] = mapped_column(LargeBinary, nullable=False)
     is_active: Mapped[bool] = mapped_column(Boolean, default=True)
     is_blocked: Mapped[bool] = mapped_column(Boolean, default=False)
+
+class  Filter(Base):
+    __tablename__ = "filter"
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+    user_name: Mapped[int] = mapped_column(BigInteger, unique=True)
+    filter: Mapped[str] = mapped_column(nullable=True)
+
 
 class Advertisement(Base):
     __tablename__ = "advertisement"
