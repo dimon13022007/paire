@@ -25,5 +25,5 @@ async def skip_param(callback: CallbackQuery, state: FSMContext):
     await state.update_data(text_disc=None)
     await state.set_state(RegisterState.language)
     text = _("Какой у вас язык программирования?")
-    await callback.message.edit_text(text, reply_markup= await MetodKeyboardInline.language_button(selected))
+    await callback.message.edit_text(text, reply_markup= await MetodKeyboardInline.language_button(callback.from_user.id,selected))
 

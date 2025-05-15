@@ -40,7 +40,7 @@ async def left_part(callback: CallbackQuery, state: FSMContext):
     data = await state.get_data()
     selected = data.get("industries", [])
 
-    markup = await MetodKeyboardInline.industry_button(selected)
+    markup = await MetodKeyboardInline.industry_button(callback.from_user.id,selected)
     await callback.message.edit_reply_markup(reply_markup=markup)
 
 
@@ -73,7 +73,7 @@ async def industry_callback(callback_query: CallbackQuery, state: FSMContext):
 
     text = _("Выберите индустрии, повторное нажатие снимает выбор:")
     if page == "left":
-        markup = await MetodKeyboardInline.industry_button(selected)
+        markup = await MetodKeyboardInline.industry_button(callback_query.from_user.id,selected)
     else:
         markup = await MetodKeyboardInline.industry_right(selected)
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-05-15 11:48+0000\n"
+"POT-Creation-Date: 2025-05-15 20:59+0000\n"
 "PO-Revision-Date: 2025-05-15 11:52+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: uk\n"
@@ -94,7 +94,7 @@ msgstr "👀 Переглянути анкету"
 msgid "Произошла ошибка при загрузке профиля."
 msgstr "Сталася помилка при завантаженні профілю."
 
-#: aio/handlers/search_handlers.py:41 aio/handlers/start_handlers/start.py:156
+#: aio/handlers/search_handlers.py:41 aio/handlers/start_handlers/start.py:157
 msgid "Ответьте на анкету, вас лайкнули!"
 msgstr "Відповідайте на анкету — вас вподобали!"
 
@@ -271,7 +271,7 @@ msgstr ""
 "/show"
 
 #: aio/handlers/callback_handlers/callback_profile.py:103
-#: aio/handlers/start_handlers/start.py:70
+#: aio/handlers/start_handlers/start.py:71
 msgid ""
 "🚫 Анкета деактивирована.\n"
 "Желаем вам удачи в стартапе! 💡\n"
@@ -284,8 +284,8 @@ msgstr ""
 "Щоб знову активувати анкету та шукати партнерів — введіть /activate"
 
 #: aio/handlers/callback_handlers/callback_profile.py:110
-#: aio/handlers/start_handlers/start.py:79
-#: aio/handlers/start_handlers/start.py:102
+#: aio/handlers/start_handlers/start.py:80
+#: aio/handlers/start_handlers/start.py:103
 msgid "Произошла ошибка. Попробуйте позже."
 msgstr "Сталася помилка. Спробуйте пізніше."
 
@@ -438,7 +438,7 @@ msgid "❌ Не вдалося оновити мову. Спробуйте ще 
 msgstr "❌ Не вдалося оновити мову. Спробуйте ще раз."
 
 #: aio/handlers/callback_handlers/keyboard_callback/back_button.py:16
-#: aio/keyboards/keyboard_for_start.py:63 aio/keyboards/keyboard_ref.py:33
+#: aio/keyboards/keyboard_for_start.py:66 aio/keyboards/keyboard_ref.py:33
 #: aio/keyboards/keyboard_setting.py:21
 msgid "Назад 🔙"
 msgstr "Назад 🔙"
@@ -461,7 +461,8 @@ msgid ""
 "Вы не зарегистрированы. Пожалуйста, зарегистрируйтесь перед "
 "использованием, введите команду /start"
 msgstr ""
-"Ви не зареєстровані. Будь ласка, зареєструйтеся перед використанням, введіть команду /start"
+"Ви не зареєстровані. Будь ласка, зареєструйтеся перед використанням, "
+"введіть команду /start"
 
 #: aio/handlers/ref_handlers/callback_ref/callback_pastet_code.py:25
 msgid "Введите ваш реферальный код"
@@ -539,7 +540,7 @@ msgstr ""
 msgid "Вернуться назад"
 msgstr "Повернутися назад"
 
-#: aio/handlers/start_handlers/start.py:94
+#: aio/handlers/start_handlers/start.py:95
 msgid ""
 "✅ Ваша анкета снова активна!\n"
 "Теперь другие пользователи смогут увидеть её и связаться с вами 🔍"
@@ -547,19 +548,19 @@ msgstr ""
 "✅ Ваша анкета знову активна!\n"
 "Тепер інші користувачі зможуть побачити її та зв’язатися з вами 🔍"
 
-#: aio/handlers/start_handlers/start.py:123
+#: aio/handlers/start_handlers/start.py:124
 msgid "Анкета пропущена."
 msgstr "Анкету пропущено."
 
-#: aio/handlers/start_handlers/start.py:150 aio/services/match_service.py:118
+#: aio/handlers/start_handlers/start.py:151 aio/services/match_service.py:118
 msgid "Анкеты закончились, подождите пока появятся новые и нажмите /show"
 msgstr "Анкети закінчилися, зачекайте поки зʼявляться нові та натисніть /show"
 
-#: aio/handlers/start_handlers/start.py:178
+#: aio/handlers/start_handlers/start.py:186
 msgid "Ты уже зарегестрировался, чтобы увидеть анкету свою анкету нажмите /show"
 msgstr "Ти вже зареєструвався, щоб побачити свою анкету — натисни /show"
 
-#: aio/handlers/start_handlers/start.py:208
+#: aio/handlers/start_handlers/start.py:217
 msgid ""
 "🔥 <b>Приветствуем тебя в PairCode!</b> 🔥\n"
 "\n"
@@ -579,7 +580,8 @@ msgstr ""
 "\n"
 "🚀 Тут ти зможеш знайти напарника, помічника або однодумця для спільної "
 "роботи над проєктами!\n"
-"🤝 Об’єднуйся з професіоналами, ділись ідеями та створюй круті речі разом!\n"
+"🤝 Об’єднуйся з професіоналами, ділись ідеями та створюй круті речі разом!"
+"\n"
 "\n"
 "💡 <b>PairCode</b> — це місце, де народжуються великі проєкти!\n"
 "\n"
@@ -588,32 +590,32 @@ msgstr ""
 "\n"
 "🛠 <b>Готовий почати?</b> Тоді проходь реєстрацію і вперед! 👇"
 
-#: aio/handlers/start_handlers/start.py:235
+#: aio/handlers/start_handlers/start.py:244
 msgid "Напишите из какого вы города ?🌆"
 msgstr "Напишіть, з якого ви міста 🌆"
 
-#: aio/handlers/start_handlers/start.py:257
+#: aio/handlers/start_handlers/start.py:266
 msgid "Как вас зовут?"
 msgstr "Як вас звати?"
 
-#: aio/handlers/start_handlers/start.py:274
+#: aio/handlers/start_handlers/start.py:283
 msgid "Сколько вам лет ?🧓👵"
 msgstr "Скільки вам років? 🧓👵"
 
-#: aio/handlers/start_handlers/start.py:293
+#: aio/handlers/start_handlers/start.py:302
 msgid "Напишите описание для профиля🖊"
 msgstr "Напишіть опис для профілю 🖊"
 
-#: aio/handlers/start_handlers/start.py:315
+#: aio/handlers/start_handlers/start.py:324
 msgid "Какой у вас язык программирования?👨‍💻"
 msgstr "Яка у вас мова програмування? 👨‍💻"
 
-#: aio/handlers/start_handlers/start.py:333
+#: aio/handlers/start_handlers/start.py:342
 #, python-brace-format
 msgid "Вы выбрали {safe_text}, это точный ответ?"
 msgstr "Ви вибрали {safe_text}, це правильна відповідь?"
 
-#: aio/handlers/start_handlers/start.py:374
+#: aio/handlers/start_handlers/start.py:383
 msgid ""
 "Ты зарегестрировался !\n"
 "Вот как выглядит твоя анкета!"
@@ -675,15 +677,20 @@ msgstr "Змінити параметри 🛠"
 msgid "Настройки 🔧"
 msgstr "Налаштування 🔧"
 
-#: aio/keyboards/keyboard_for_start.py:81
+#: aio/keyboards/keyboard_for_start.py:85
 msgid "Начать регистрацию "
 msgstr "Почати реєстрацію"
 
-#: aio/keyboards/keyboard_for_start.py:110
+#: aio/keyboards/keyboard_for_start.py:104
+#: aio/keyboards/keyboard_for_start.py:137
+msgid "Готово▶️"
+msgstr "Готово ▶️"
+
+#: aio/keyboards/keyboard_for_start.py:117
 msgid "Да"
 msgstr "Так"
 
-#: aio/keyboards/keyboard_for_start.py:111
+#: aio/keyboards/keyboard_for_start.py:118
 msgid "Помянять"
 msgstr "Змінити"
 
@@ -726,6 +733,14 @@ msgstr "Ні"
 #: aio/keyboards/skip_param.py:16
 msgid "Пропустить"
 msgstr "Пропустити"
+
+#: aio/keyboards/filter_keyboard/filter_keyboarad.py:34
+msgid "🔄 Сброс"
+msgstr "🔄 Скинути"
+
+#: aio/keyboards/filter_keyboard/filter_keyboarad.py:35
+msgid "✅ Готово"
+msgstr "✅ Готово"
 
 #: aio/validate/validate_register.py:15
 msgid "❌ Пожалуйста, имя должно начинаться с большой буквы"
@@ -778,3 +793,4 @@ msgstr "Сталася помилка під час обробки фото, с�
 #: aio/validate/validate_register.py:133
 msgid "Введен слишком длинный текст для данной категории"
 msgstr "Введено занадто довгий текст для цієї категорії"
+

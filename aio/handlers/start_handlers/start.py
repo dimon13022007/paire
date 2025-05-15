@@ -178,6 +178,7 @@ async def language_start(message: Message):
 
     tg = message.from_user.language_code
     trans_tg = await get_translator(tg)
+    print(f"Telegram lang {tg}")
     __ = trans_tg.gettext
     res = await MetodSQL.see_true(message.from_user.id)
     print(res)
@@ -185,7 +186,7 @@ async def language_start(message: Message):
         text = _("Ты уже зарегестрировался, чтобы увидеть анкету свою анкету нажмите /show")
         await message.answer(text)
         return
-    text = _("На каком языке вы хотели бы объединяться с другими ИТ-специалистами? 🌍")
+    text = __("На каком языке вы хотели бы объединяться с другими ИТ-специалистами? 🌍")
     await message.answer(
         text,
         reply_markup=await MetodKeyboardInline.language_commnad()

@@ -48,7 +48,7 @@ async def language_callback(callback_query: CallbackQuery, state: FSMContext):
     await state.update_data(language=selected)
     await callback_query.message.edit_text("Какой у вас язык программирования ?",
                                         reply_markup=await MetodKeyboardInline.language_button(
-                                            selected
+                                            callback_query.from_user.id,selected
                                         ))
 
 @router.callback_query(F.data == "success")
@@ -77,7 +77,7 @@ async def nice_callback(callback: CallbackQuery, state: FSMContext):
         selected = data.get("industries", [])
         await callback.message.edit_text(
             text2,
-            reply_markup=await MetodKeyboardInline.industry_button(selected)
+            reply_markup=await MetodKeyboardInline.industry_button(callback.from_user.id,selected)
         )
 
     except Exception as err:

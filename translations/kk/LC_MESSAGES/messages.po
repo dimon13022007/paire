@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-05-15 11:48+0000\n"
+"POT-Creation-Date: 2025-05-15 20:59+0000\n"
 "PO-Revision-Date: 2025-05-15 11:52+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: kk\n"
@@ -93,7 +93,7 @@ msgstr "👀 Анкетаны көру"
 msgid "Произошла ошибка при загрузке профиля."
 msgstr "Профильді жүктеу кезінде қате орын алды."
 
-#: aio/handlers/search_handlers.py:41 aio/handlers/start_handlers/start.py:156
+#: aio/handlers/search_handlers.py:41 aio/handlers/start_handlers/start.py:157
 msgid "Ответьте на анкету, вас лайкнули!"
 msgstr "Анкетаға жауап беріңіз, сізге лайк қойылды!"
 
@@ -189,6 +189,7 @@ msgid "Загрузите новое изображение📸"
 msgstr "Жаңа суретті жүктеңіз📸"
 
 #: aio/handlers/callback_handlers/callback_changeanketa.py:132
+#, python-brace-format
 msgid "Ваш возраст обновлен: {age} ✅"
 msgstr "Жасыңыз жаңартылды: {age} ✅"
 
@@ -251,6 +252,7 @@ msgid "Выберите индустрию для фильтрации анке�
 msgstr "Анкеталарды сүзгілеу үшін саланы таңдаңыз:"
 
 #: aio/handlers/callback_handlers/callback_profile.py:69
+#, python-brace-format
 msgid ""
 "Фильтр установлен: {industry}.\n"
 "Нажмите /show для поиска анкет."
@@ -268,7 +270,7 @@ msgstr ""
 "/show"
 
 #: aio/handlers/callback_handlers/callback_profile.py:103
-#: aio/handlers/start_handlers/start.py:70
+#: aio/handlers/start_handlers/start.py:71
 msgid ""
 "🚫 Анкета деактивирована.\n"
 "Желаем вам удачи в стартапе! 💡\n"
@@ -281,8 +283,8 @@ msgstr ""
 "Анкетаны қайта қосып, серіктестерді іздеу үшін /activate енгізіңіз"
 
 #: aio/handlers/callback_handlers/callback_profile.py:110
-#: aio/handlers/start_handlers/start.py:79
-#: aio/handlers/start_handlers/start.py:102
+#: aio/handlers/start_handlers/start.py:80
+#: aio/handlers/start_handlers/start.py:103
 msgid "Произошла ошибка. Попробуйте позже."
 msgstr "Қате пайда болды. Кейінірек көріңіз."
 
@@ -298,7 +300,9 @@ msgid ""
 msgstr ""
 "👋 Сәлеметсіз бе!\n"
 "\n"
-"Мұнда сіз өзіңіздің рефералдық кодыңызды ала аласыз. Оны досыңызға беріңіз, ол тіркелу кезінде сіздің кодыңызды көрсете алады. Нәтижесінде сіздің анкетаңыз күшейтіледі! 🚀"
+"Мұнда сіз өзіңіздің рефералдық кодыңызды ала аласыз. Оны досыңызға "
+"беріңіз, ол тіркелу кезінде сіздің кодыңызды көрсете алады. Нәтижесінде "
+"сіздің анкетаңыз күшейтіледі! 🚀"
 
 #: aio/handlers/callback_handlers/callback_back/callback_main_menu.py:38
 #: aio/handlers/callback_handlers/callback_back/callback_main_menu.py:51
@@ -328,6 +332,7 @@ msgid "❌ Нельзя очистить поле индустрии. Пожал
 msgstr "❌ Сала өрісін тазарту мүмкін емес. Жаңа мәнді таңдаңыз."
 
 #: aio/handlers/callback_handlers/change_lang_ind/change_industry.py:42
+#, python-brace-format
 msgid ""
 "Какое новое значение вы хотите определить?\n"
 "Текущее: {current}\n"
@@ -372,6 +377,7 @@ msgstr "Сіз сала таңдауды алып тастадыңыз ✅"
 
 #: aio/handlers/callback_handlers/change_lang_ind/change_industry.py:114
 #: aio/handlers/callback_handlers/change_lang_ind/change_industry.py:223
+#, python-brace-format
 msgid "Вы выбрали индустрию: {industry_value} ✅"
 msgstr "Сіз саланы таңдадыңыз: {industry_value} ✅"
 
@@ -381,6 +387,7 @@ msgid "❌ Не удалось обновить индустрию. Попроб
 msgstr "❌ Саланы жаңарту сәтсіз аяқталды. Қайтадан көріңіз."
 
 #: aio/handlers/callback_handlers/change_lang_ind/change_industry.py:158
+#, python-brace-format
 msgid ""
 "Какое новое значение вы хотите определить?\n"
 "Текущее: {current}\n"
@@ -420,6 +427,7 @@ msgstr "❌ 1 мен 13 аралығында сан енгізіңіз."
 
 #: aio/handlers/callback_handlers/change_lang_ind/change_industry.py:278
 #: aio/handlers/callback_handlers/change_lang_ind/change_industry.py:328
+#, python-brace-format
 msgid "Ваше значення мови оновлено: {new_language} ✅"
 msgstr "Тіл параметрі жаңартылды: {new_language} ✅"
 
@@ -429,7 +437,7 @@ msgid "❌ Не вдалося оновити мову. Спробуйте ще 
 msgstr "❌ Тілді жаңарту сәтсіз аяқталды. Қайталап көріңіз."
 
 #: aio/handlers/callback_handlers/keyboard_callback/back_button.py:16
-#: aio/keyboards/keyboard_for_start.py:63 aio/keyboards/keyboard_ref.py:33
+#: aio/keyboards/keyboard_for_start.py:66 aio/keyboards/keyboard_ref.py:33
 #: aio/keyboards/keyboard_setting.py:21
 msgid "Назад 🔙"
 msgstr "Артқа 🔙"
@@ -448,7 +456,9 @@ msgid "Можно выбрать не более 3 индустрий"
 msgstr "Үштен артық индустрия таңдау мүмкін емес"
 
 #: aio/handlers/ref_handlers/admin_panel/admin.py:25
-msgid "Вы не зарегистрированы. Пожалуйста, зарегистрируйтесь перед использованием, введите команду /start"
+msgid ""
+"Вы не зарегистрированы. Пожалуйста, зарегистрируйтесь перед "
+"использованием, введите команду /start"
 msgstr "Сіз тіркелмегенсіз. Пайдаланар алдында /start пәрменін теріп, тіркеліңіз"
 
 #: aio/handlers/ref_handlers/callback_ref/callback_pastet_code.py:25
@@ -527,7 +537,7 @@ msgstr ""
 msgid "Вернуться назад"
 msgstr "Артқа қайту"
 
-#: aio/handlers/start_handlers/start.py:94
+#: aio/handlers/start_handlers/start.py:95
 msgid ""
 "✅ Ваша анкета снова активна!\n"
 "Теперь другие пользователи смогут увидеть её и связаться с вами 🔍"
@@ -535,19 +545,19 @@ msgstr ""
 "✅ Сіздің анкетаңыз қайтадан белсенді!\n"
 "Енді басқа қолданушылар оны көріп, сізбен байланыса алады 🔍"
 
-#: aio/handlers/start_handlers/start.py:123
+#: aio/handlers/start_handlers/start.py:124
 msgid "Анкета пропущена."
 msgstr "Анкета өткізіліп жіберілді."
 
-#: aio/handlers/start_handlers/start.py:150 aio/services/match_service.py:118
+#: aio/handlers/start_handlers/start.py:151 aio/services/match_service.py:118
 msgid "Анкеты закончились, подождите пока появятся новые и нажмите /show"
 msgstr "Анкеталар таусылды, жаңалары шыққанша күтіп, /show басыңыз"
 
-#: aio/handlers/start_handlers/start.py:178
+#: aio/handlers/start_handlers/start.py:186
 msgid "Ты уже зарегестрировался, чтобы увидеть анкету свою анкету нажмите /show"
 msgstr "Сіз тіркеліп қойдыңыз, анкетаңызды көру үшін /show басыңыз"
 
-#: aio/handlers/start_handlers/start.py:208
+#: aio/handlers/start_handlers/start.py:217
 msgid ""
 "🔥 <b>Приветствуем тебя в PairCode!</b> 🔥\n"
 "\n"
@@ -567,40 +577,43 @@ msgstr ""
 "\n"
 "🚀 Мұнда сен серіктес, көмекші немесе идеялас адам таба аласың,\n"
 "бірге жобаларда жұмыс істеу үшін!\n"
-"🤝 Маман адамдармен бірігіп, идеялармен бөлісіп, керемет нәрселерді бірге жаса!\n"
+"🤝 Маман адамдармен бірігіп, идеялармен бөлісіп, керемет нәрселерді бірге "
+"жаса!\n"
 "\n"
 "💡 <b>PairCode</b> — ұлы жобалар осында басталады!\n"
 "\n"
 "🎁 Тіркелгеннен кейін <b>досыңның реферальдық кодын енгізе аласың</b>\n"
-"немесе <b>өзіңдікін бөлісе аласың</b> <code>/ref</code> командасы арқылы.\n"
+"немесе <b>өзіңдікін бөлісе аласың</b> <code>/ref</code> командасы арқылы."
+"\n"
 "\n"
 "🛠 <b>Бастауға дайынсың ба?</b> Онда тіркеліп, кіріс! 👇"
 
-#: aio/handlers/start_handlers/start.py:235
+#: aio/handlers/start_handlers/start.py:244
 msgid "Напишите из какого вы города ?🌆"
 msgstr "Қай қаладан екеніңізді жазыңыз 🌆"
 
-#: aio/handlers/start_handlers/start.py:257
+#: aio/handlers/start_handlers/start.py:266
 msgid "Как вас зовут?"
 msgstr "Атыңыз кім?"
 
-#: aio/handlers/start_handlers/start.py:274
+#: aio/handlers/start_handlers/start.py:283
 msgid "Сколько вам лет ?🧓👵"
 msgstr "Жасыңыз қанша? 🧓👵"
 
-#: aio/handlers/start_handlers/start.py:293
+#: aio/handlers/start_handlers/start.py:302
 msgid "Напишите описание для профиля🖊"
 msgstr "Профильге сипаттама жазыңыз 🖊"
 
-#: aio/handlers/start_handlers/start.py:315
+#: aio/handlers/start_handlers/start.py:324
 msgid "Какой у вас язык программирования?👨‍💻"
 msgstr "Қандай бағдарламалау тілін қолданасыз? 👨‍💻"
 
-#: aio/handlers/start_handlers/start.py:333
+#: aio/handlers/start_handlers/start.py:342
+#, python-brace-format
 msgid "Вы выбрали {safe_text}, это точный ответ?"
 msgstr "{safe_text} таңдадыңыз, бұл дұрыс па?"
 
-#: aio/handlers/start_handlers/start.py:374
+#: aio/handlers/start_handlers/start.py:383
 msgid ""
 "Ты зарегестрировался !\n"
 "Вот как выглядит твоя анкета!"
@@ -662,15 +675,20 @@ msgstr "Параметрлерді өзгерту 🛠"
 msgid "Настройки 🔧"
 msgstr "Баптаулар 🔧"
 
-#: aio/keyboards/keyboard_for_start.py:81
+#: aio/keyboards/keyboard_for_start.py:85
 msgid "Начать регистрацию "
 msgstr "Тіркелуді бастау"
 
-#: aio/keyboards/keyboard_for_start.py:110
+#: aio/keyboards/keyboard_for_start.py:104
+#: aio/keyboards/keyboard_for_start.py:137
+msgid "Готово▶️"
+msgstr "Дайын ▶️"
+
+#: aio/keyboards/keyboard_for_start.py:117
 msgid "Да"
 msgstr "Иә"
 
-#: aio/keyboards/keyboard_for_start.py:111
+#: aio/keyboards/keyboard_for_start.py:118
 msgid "Помянять"
 msgstr "Өзгерту"
 
@@ -713,6 +731,14 @@ msgstr "Жоқ"
 #: aio/keyboards/skip_param.py:16
 msgid "Пропустить"
 msgstr "Өткізу"
+
+#: aio/keyboards/filter_keyboard/filter_keyboarad.py:34
+msgid "🔄 Сброс"
+msgstr "🔄 Қалпына келтіру"
+
+#: aio/keyboards/filter_keyboard/filter_keyboarad.py:35
+msgid "✅ Готово"
+msgstr "✅ Дайын"
 
 #: aio/validate/validate_register.py:15
 msgid "❌ Пожалуйста, имя должно начинаться с большой буквы"
@@ -765,3 +791,4 @@ msgstr "Фотоны өңдеу кезінде қате орын алды, қа�
 #: aio/validate/validate_register.py:133
 msgid "Введен слишком длинный текст для данной категории"
 msgstr "Бұл категория үшін енгізілген мәтін тым ұзын"
+

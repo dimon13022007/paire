@@ -87,7 +87,10 @@ class MetodKeyboardInline:
         return start
 
     @staticmethod
-    async def language_button(selected: list[str]):
+    async def language_button(user_id,selected: list[str]):
+        lang_param = await MetodSQL.get_language(user_id)
+        translator = await get_translator(lang_param)
+        _ = translator.gettext
 
         def mark(name: str) -> InlineKeyboardButton:
             text = f"{name} ✅" if name in selected else name
@@ -98,7 +101,7 @@ class MetodKeyboardInline:
         row_3 = [mark("Go"), mark("C,C++")]
         row_4 = [mark("C#"), mark("Swift")]
         row_5 = [mark("Kotlin"), mark("R")]
-        row_6 = [InlineKeyboardButton(text="Готово▶️", callback_data="success")]
+        row_6 = [InlineKeyboardButton(text=_("Готово▶️"), callback_data="success")]
 
         keyboard = InlineKeyboardMarkup(inline_keyboard=[
             row_1, row_2, row_3, row_4, row_5,row_6
@@ -120,7 +123,10 @@ class MetodKeyboardInline:
         return another
 
     @staticmethod
-    async def industry_button(selected: list[str]):
+    async def industry_button(user_id,selected: list[str]):
+        lang_param = await MetodSQL.get_language(user_id)
+        translator = await get_translator(lang_param)
+        _ = translator.gettext
         def mark(name: str) -> InlineKeyboardButton:
             text = f"{name} ✅" if name in selected else name
             return InlineKeyboardButton(text=text, callback_data=name)
@@ -128,7 +134,7 @@ class MetodKeyboardInline:
         row_1 = [mark("Backend"), mark("Front-end")]
         row_2 = [mark("FullStack"), mark("MobileDev")]
         row_4 = [InlineKeyboardButton(text="➡️", callback_data="right")]
-        row_5 = [InlineKeyboardButton(text="▶️", callback_data="nice")]
+        row_5 = [InlineKeyboardButton(text=_("Готово▶️"), callback_data="nice")]
 
         return InlineKeyboardMarkup(inline_keyboard=[row_1, row_2, row_4, row_5])
 

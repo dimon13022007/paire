@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-05-15 11:48+0000\n"
+"POT-Creation-Date: 2025-05-15 20:59+0000\n"
 "PO-Revision-Date: 2025-05-15 19:02+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: it\n"
@@ -93,7 +93,7 @@ msgstr "👀 Visualizza il profilo"
 msgid "Произошла ошибка при загрузке профиля."
 msgstr "Si è verificato un errore durante il caricamento del profilo."
 
-#: aio/handlers/search_handlers.py:41 aio/handlers/start_handlers/start.py:156
+#: aio/handlers/search_handlers.py:41 aio/handlers/start_handlers/start.py:157
 msgid "Ответьте на анкету, вас лайкнули!"
 msgstr "Rispondi al profilo, qualcuno ti ha messo like!"
 
@@ -270,7 +270,7 @@ msgstr ""
 "/show"
 
 #: aio/handlers/callback_handlers/callback_profile.py:103
-#: aio/handlers/start_handlers/start.py:70
+#: aio/handlers/start_handlers/start.py:71
 msgid ""
 "🚫 Анкета деактивирована.\n"
 "Желаем вам удачи в стартапе! 💡\n"
@@ -283,8 +283,8 @@ msgstr ""
 "Per riattivare il profilo e cercare partner — digita /activate"
 
 #: aio/handlers/callback_handlers/callback_profile.py:110
-#: aio/handlers/start_handlers/start.py:79
-#: aio/handlers/start_handlers/start.py:102
+#: aio/handlers/start_handlers/start.py:80
+#: aio/handlers/start_handlers/start.py:103
 msgid "Произошла ошибка. Попробуйте позже."
 msgstr "Si è verificato un errore. Riprova più tardi."
 
@@ -300,7 +300,9 @@ msgid ""
 msgstr ""
 "👋 Ciao!\n"
 "\n"
-"Qui puoi ottenere il tuo codice di riferimento. Condividilo con un amico in modo che possa inserirlo durante la registrazione. In cambio riceverai un boost per il tuo profilo! 🚀"
+"Qui puoi ottenere il tuo codice di riferimento. Condividilo con un amico "
+"in modo che possa inserirlo durante la registrazione. In cambio riceverai"
+" un boost per il tuo profilo! 🚀"
 
 #: aio/handlers/callback_handlers/callback_back/callback_main_menu.py:38
 #: aio/handlers/callback_handlers/callback_back/callback_main_menu.py:51
@@ -327,7 +329,9 @@ msgstr "❌ Si è verificato un errore. Riprova."
 
 #: aio/handlers/callback_handlers/change_lang_ind/change_industry.py:36
 msgid "❌ Нельзя очистить поле индустрии. Пожалуйста, выберите новое значение."
-msgstr "❌ Non è possibile svuotare il campo dell'industria. Seleziona un nuovo valore."
+msgstr ""
+"❌ Non è possibile svuotare il campo dell'industria. Seleziona un nuovo "
+"valore."
 
 #: aio/handlers/callback_handlers/change_lang_ind/change_industry.py:42
 #, python-brace-format
@@ -435,7 +439,7 @@ msgid "❌ Не вдалося оновити мову. Спробуйте ще 
 msgstr "❌ Impossibile aggiornare la lingua. Riprova."
 
 #: aio/handlers/callback_handlers/keyboard_callback/back_button.py:16
-#: aio/keyboards/keyboard_for_start.py:63 aio/keyboards/keyboard_ref.py:33
+#: aio/keyboards/keyboard_for_start.py:66 aio/keyboards/keyboard_ref.py:33
 #: aio/keyboards/keyboard_setting.py:21
 msgid "Назад 🔙"
 msgstr "Indietro 🔙"
@@ -454,8 +458,12 @@ msgid "Можно выбрать не более 3 индустрий"
 msgstr "Puoi selezionare al massimo 3 settori"
 
 #: aio/handlers/ref_handlers/admin_panel/admin.py:25
-msgid "Вы не зарегистрированы. Пожалуйста, зарегистрируйтесь перед использованием, введите команду /start"
-msgstr "Non sei registrato. Per favore, registrati prima di utilizzare il servizio, digita il comando /start"
+msgid ""
+"Вы не зарегистрированы. Пожалуйста, зарегистрируйтесь перед "
+"использованием, введите команду /start"
+msgstr ""
+"Non sei registrato. Per favore, registrati prima di utilizzare il "
+"servizio, digita il comando /start"
 
 #: aio/handlers/ref_handlers/callback_ref/callback_pastet_code.py:25
 msgid "Введите ваш реферальный код"
@@ -466,13 +474,29 @@ msgid "Вы ввели свой же код😅"
 msgstr "Hai inserito il tuo stesso codice 😅"
 
 #: aio/handlers/ref_handlers/callback_ref/callback_pastet_code.py:54
-msgid "Ты уже вводил реферальный код\n\n<i>Прости, но его можно вводить только один раз 🫠</i>"
-msgstr "Hai già inserito un codice di riferimento\n\n<i>Mi dispiace, ma può essere inserito solo una volta 🫠</i>"
+msgid ""
+"Ты уже вводил реферальный код\n"
+"\n"
+"<i>Прости, но его можно вводить только один раз 🫠</i>"
+msgstr ""
+"Hai già inserito un codice di riferimento\n"
+"\n"
+"<i>Mi dispiace, ma può essere inserito solo una volta 🫠</i>"
 
 #: aio/handlers/ref_handlers/callback_ref/callback_pastet_code.py:64
 #, python-brace-format
-msgid "Вашу реферальную ссылку использовали\n\n<i>Пользователь: @{username}! 🥳</i>\n\nТеперь вас ждет <b>буст к вашей анкете</b>!"
-msgstr "Il tuo link di riferimento è stato utilizzato\n\n<i>Utente: @{username}! 🥳</i>\n\nOra riceverai un <b>boost al tuo profilo</b>!"
+msgid ""
+"Вашу реферальную ссылку использовали\n"
+"\n"
+"<i>Пользователь: @{username}! 🥳</i>\n"
+"\n"
+"Теперь вас ждет <b>буст к вашей анкете</b>!"
+msgstr ""
+"Il tuo link di riferimento è stato utilizzato\n"
+"\n"
+"<i>Utente: @{username}! 🥳</i>\n"
+"\n"
+"Ora riceverai un <b>boost al tuo profilo</b>!"
 
 #: aio/handlers/ref_handlers/callback_ref/callback_pastet_code.py:74
 msgid "Код принят!"
@@ -485,35 +509,61 @@ msgstr "Non prendermi in giro, {username}, nemmeno provarci"
 
 #: aio/handlers/ref_handlers/callback_ref/callback_ref.py:33
 #, python-brace-format
-msgid "🎉 <b>Вы уже получили свой реферальный код!</b>\n\n<code>{code}</code>\n\n🔹 Поделитесь им с друзьями, чтобы получить бонусы! 😉"
-msgstr "🎉 <b>Hai già ricevuto il tuo codice di riferimento!</b>\n\n<code>{code}</code>\n\n🔹 Condividilo con i tuoi amici per ottenere dei bonus! 😉"
+msgid ""
+"🎉 <b>Вы уже получили свой реферальный код!</b>\n"
+"\n"
+"<code>{code}</code>\n"
+"\n"
+"🔹 Поделитесь им с друзьями, чтобы получить бонусы! 😉"
+msgstr ""
+"🎉 <b>Hai già ricevuto il tuo codice di riferimento!</b>\n"
+"\n"
+"<code>{code}</code>\n"
+"\n"
+"🔹 Condividilo con i tuoi amici per ottenere dei bonus! 😉"
 
 #: aio/handlers/ref_handlers/callback_ref/callback_ref.py:52
 #, python-brace-format
-msgid "🎁 <b>Вот твой реферальный код!</b>\n\n<code>{user_code}</code>\n\n🔹 Отправь его друзьям, чтобы получить бонусы! 🚀"
-msgstr "🎁 <b>Ecco il tuo codice di riferimento!</b>\n\n<code>{user_code}</code>\n\n🔹 Invia il codice ai tuoi amici per ottenere dei bonus! 🚀"
+msgid ""
+"🎁 <b>Вот твой реферальный код!</b>\n"
+"\n"
+"<code>{user_code}</code>\n"
+"\n"
+"🔹 Отправь его друзьям, чтобы получить бонусы! 🚀"
+msgstr ""
+"🎁 <b>Ecco il tuo codice di riferimento!</b>\n"
+"\n"
+"<code>{user_code}</code>\n"
+"\n"
+"🔹 Invia il codice ai tuoi amici per ottenere dei bonus! 🚀"
 
 #: aio/handlers/ref_handlers/ref_keyboards/keyboard_for_ref.py:17
 msgid "Вернуться назад"
 msgstr "Torna indietro"
 
-#: aio/handlers/start_handlers/start.py:94
-msgid "✅ Ваша анкета снова активна!\nТеперь другие пользователи смогут увидеть её и связаться с вами 🔍"
-msgstr "✅ Il tuo profilo è di nuovo attivo!\nOra gli altri utenti potranno vederlo e contattarti 🔍"
+#: aio/handlers/start_handlers/start.py:95
+msgid ""
+"✅ Ваша анкета снова активна!\n"
+"Теперь другие пользователи смогут увидеть её и связаться с вами 🔍"
+msgstr ""
+"✅ Il tuo profilo è di nuovo attivo!\n"
+"Ora gli altri utenti potranno vederlo e contattarti 🔍"
 
-#: aio/handlers/start_handlers/start.py:123
+#: aio/handlers/start_handlers/start.py:124
 msgid "Анкета пропущена."
 msgstr "Profilo saltato."
 
-#: aio/handlers/start_handlers/start.py:150 aio/services/match_service.py:118
+#: aio/handlers/start_handlers/start.py:151 aio/services/match_service.py:118
 msgid "Анкеты закончились, подождите пока появятся новые и нажмите /show"
-msgstr "Non ci sono più profili al momento. Aspetta che ne appaiano di nuovi e premi /show"
+msgstr ""
+"Non ci sono più profili al momento. Aspetta che ne appaiano di nuovi e "
+"premi /show"
 
-#: aio/handlers/start_handlers/start.py:178
+#: aio/handlers/start_handlers/start.py:186
 msgid "Ты уже зарегестрировался, чтобы увидеть анкету свою анкету нажмите /show"
 msgstr "Ti sei già registrato. Per vedere il tuo profilo, premi /show"
 
-#: aio/handlers/start_handlers/start.py:208
+#: aio/handlers/start_handlers/start.py:217
 msgid ""
 "🔥 <b>Приветствуем тебя в PairCode!</b> 🔥\n"
 "\n"
@@ -531,43 +581,51 @@ msgid ""
 msgstr ""
 "🔥 <b>Benvenuto su PairCode!</b> 🔥\n"
 "\n"
-"🚀 Qui puoi trovare un partner, un assistente o un compagno di idee per lavorare insieme ai progetti!\n"
-"🤝 Collabora con professionisti, condividi idee e crea cose fantastiche insieme!\n"
+"🚀 Qui puoi trovare un partner, un assistente o un compagno di idee per "
+"lavorare insieme ai progetti!\n"
+"🤝 Collabora con professionisti, condividi idee e crea cose fantastiche "
+"insieme!\n"
 "\n"
 "💡 <b>PairCode</b> è il posto dove nascono i grandi progetti!\n"
 "\n"
-"🎁 Dopo la registrazione potrai <b>inserire il codice di riferimento di un amico</b> oppure <b>condividere il tuo</b> usando il comando <code>/ref</code>.\n"
+"🎁 Dopo la registrazione potrai <b>inserire il codice di riferimento di un"
+" amico</b> oppure <b>condividere il tuo</b> usando il comando "
+"<code>/ref</code>.\n"
 "\n"
 "🛠 <b>Pronto a iniziare?</b> Allora registrati e cominciamo! 👇"
 
-#: aio/handlers/start_handlers/start.py:235
+#: aio/handlers/start_handlers/start.py:244
 msgid "Напишите из какого вы города ?🌆"
 msgstr "Da quale città vieni? 🌆"
 
-#: aio/handlers/start_handlers/start.py:257
+#: aio/handlers/start_handlers/start.py:266
 msgid "Как вас зовут?"
 msgstr "Come ti chiami?"
 
-#: aio/handlers/start_handlers/start.py:274
+#: aio/handlers/start_handlers/start.py:283
 msgid "Сколько вам лет ?🧓👵"
 msgstr "Quanti anni hai? 🧓👵"
 
-#: aio/handlers/start_handlers/start.py:293
+#: aio/handlers/start_handlers/start.py:302
 msgid "Напишите описание для профиля🖊"
 msgstr "Scrivi una descrizione per il tuo profilo 🖊"
 
-#: aio/handlers/start_handlers/start.py:315
+#: aio/handlers/start_handlers/start.py:324
 msgid "Какой у вас язык программирования?👨‍💻"
 msgstr "Qual è il tuo linguaggio di programmazione? 👨‍💻"
 
-#: aio/handlers/start_handlers/start.py:333
+#: aio/handlers/start_handlers/start.py:342
 #, python-brace-format
 msgid "Вы выбрали {safe_text}, это точный ответ?"
 msgstr "Hai scelto {safe_text}, è corretto?"
 
-#: aio/handlers/start_handlers/start.py:374
-msgid "Ты зарегестрировался !\nВот как выглядит твоя анкета!"
-msgstr "Ti sei registrato!\nEcco come appare il tuo profilo!"
+#: aio/handlers/start_handlers/start.py:383
+msgid ""
+"Ты зарегестрировался !\n"
+"Вот как выглядит твоя анкета!"
+msgstr ""
+"Ti sei registrato!\n"
+"Ecco come appare il tuo profilo!"
 
 #: aio/keyboards/keyboard_change.py:15 aio/keyboards/keyboard_change.py:16
 #: aio/keyboards/keyboard_change.py:17 aio/keyboards/keyboard_change.py:34
@@ -623,15 +681,20 @@ msgstr "Modifica parametri 🛠"
 msgid "Настройки 🔧"
 msgstr "Impostazioni 🔧"
 
-#: aio/keyboards/keyboard_for_start.py:81
+#: aio/keyboards/keyboard_for_start.py:85
 msgid "Начать регистрацию "
 msgstr "Inizia la registrazione"
 
-#: aio/keyboards/keyboard_for_start.py:110
+#: aio/keyboards/keyboard_for_start.py:104
+#: aio/keyboards/keyboard_for_start.py:137
+msgid "Готово▶️"
+msgstr "Fatto ▶️"
+
+#: aio/keyboards/keyboard_for_start.py:117
 msgid "Да"
 msgstr "Sì"
 
-#: aio/keyboards/keyboard_for_start.py:111
+#: aio/keyboards/keyboard_for_start.py:118
 msgid "Помянять"
 msgstr "Modifica"
 
@@ -674,6 +737,14 @@ msgstr "No"
 #: aio/keyboards/skip_param.py:16
 msgid "Пропустить"
 msgstr "Salta"
+
+#: aio/keyboards/filter_keyboard/filter_keyboarad.py:34
+msgid "🔄 Сброс"
+msgstr "🔄 Reimposta"
+
+#: aio/keyboards/filter_keyboard/filter_keyboarad.py:35
+msgid "✅ Готово"
+msgstr "✅ Fatto"
 
 #: aio/validate/validate_register.py:15
 msgid "❌ Пожалуйста, имя должно начинаться с большой буквы"
@@ -726,3 +797,4 @@ msgstr "Si è verificato un errore durante l'elaborazione della foto, riprova"
 #: aio/validate/validate_register.py:133
 msgid "Введен слишком длинный текст для данной категории"
 msgstr "Il testo inserito è troppo lungo per questa categoria"
+

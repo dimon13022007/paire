@@ -110,7 +110,7 @@ async def change_lang(message: Message, state: FSMContext):
     await state.update_data(language=message.text)
     await state.set_state(ChangeRegisterParam.industry)
     text = _("Какое у вас направление?")
-    await message.answer(text, reply_markup=await MetodKeyboardInline.industry_button())
+    await message.answer(text, reply_markup=await MetodKeyboardInline.industry_button(message.from_user.id))
 
 @router.message(ChangeRegisterParam.industry)
 async def change_ind(message:Message, state: FSMContext):

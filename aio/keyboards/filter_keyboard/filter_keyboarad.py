@@ -31,8 +31,8 @@ class FilterButton:
             text = f"{name} ✅" if name in selected else name
             return InlineKeyboardButton(text=text, callback_data=f"set_filter_{name}")
 
-        set_filter = InlineKeyboardButton(text="🔄 Сброс", callback_data="reset_filter")
-        success = InlineKeyboardButton(text="✅ Готово", callback_data="filter_next")
+        set_filter = InlineKeyboardButton(text=_("🔄 Сброс"), callback_data="reset_filter")
+        success = InlineKeyboardButton(text=_("✅ Готово"), callback_data="filter_next")
         right = InlineKeyboardButton(text="➡️", callback_data="filter_right")
 
 
