@@ -37,13 +37,7 @@ async def search_callback(callback: CallbackQuery, state: FSMContext):
 
         if user_id in liked_users and liked_users[user_id] and user_id not in liked_users_in_session:
             liker_id = next(iter(liked_users[user_id]))
-            await callback.message.answer(
-                _("Ответьте на анкету, вас лайкнули!"),
-                reply_markup=InlineKeyboardMarkup(inline_keyboard=[
-                    [InlineKeyboardButton(text=_("Посмотреть анкету"), callback_data=f"view_{liker_id}")]
-                ])
-            )
-            return
+
 
         try:
             if callback.message.reply_markup:
