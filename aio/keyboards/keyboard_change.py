@@ -14,6 +14,7 @@ class ChangeAnketa:
 
         user_ind1 = user_ind1.strip() if user_ind1 and user_ind1.strip() else _("Не выбрано")
         user_ind2 = user_ind2.strip() if user_ind2 and user_ind2.strip() else _("Не выбрано")
+        user_ind3 = user_ind3.strip() if user_ind3 and user_ind3.strip() else _("Не выбрано")
 
         ind1 = InlineKeyboardButton(text=_(user_ind1), callback_data="ind1")
         ind2 = InlineKeyboardButton(text=_(user_ind2), callback_data="ind2")

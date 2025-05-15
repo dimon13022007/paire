@@ -1,7 +1,6 @@
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from database.metod_for_database import MetodSQL
 from text_translete.translate import get_translator
-import gettext
 
 
 
@@ -11,6 +10,9 @@ de_keyboard = InlineKeyboardButton(text="🇩🇪", callback_data="de")
 uk_keyboard = InlineKeyboardButton(text="🇺🇦", callback_data="uk")
 ru_keyboard = InlineKeyboardButton(text="🇷🇺", callback_data="ru")
 kk_keyboard = InlineKeyboardButton(text="🇰🇿", callback_data="kk")
+ky_keyboard = InlineKeyboardButton(text="🇰🇬", callback_data="ky")
+it_keyboard = InlineKeyboardButton(text="🇮🇹", callback_data="it")
+
 
 
 
@@ -50,7 +52,8 @@ class MetodKeyboardInline:
         row1 = [uk_keyboard, en_keyboard]
         row2 = [es_keyboard, de_keyboard]
         row3 = [ru_keyboard, kk_keyboard]
-        row = [row1, row2, row3]
+        row4 = [ky_keyboard, it_keyboard]
+        row = [row1, row2, row3, row4]
         lang = InlineKeyboardMarkup(inline_keyboard=row)
         return lang
 
@@ -65,8 +68,9 @@ class MetodKeyboardInline:
         row1 = [uk_keyboard, en_keyboard]
         row2 = [es_keyboard, de_keyboard]
         row3 = [ru_keyboard, kk_keyboard]
+        row_3 = [ky_keyboard,it_keyboard]
         row4 = [back_lang]
-        row = [row1, row2, row3, row4]
+        row = [row1, row2, row3,row_3, row4]
         lang = InlineKeyboardMarkup(inline_keyboard=row)
         return lang
 

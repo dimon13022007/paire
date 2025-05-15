@@ -49,6 +49,7 @@ import aio.handlers.view_handlers
 from database.models import Lang
 from pydantic_schemas.unique_param import ParamLang
 from text_translete.translate import get_translator
+
 import gettext
 
 logger = logging.getLogger(__name__)
@@ -172,21 +173,28 @@ async def language_start(message: Message):
 
     translator = await get_translator(lang_param)
     _ = translator.gettext
+    lang_param = await MetodSQL.get_language(message.from_user.id)
+    print(lang_param)
+
+    tg = message.from_user.language_code
+    trans_tg = await get_translator(tg)
+    __ = trans_tg.gettext
     res = await MetodSQL.see_true(message.from_user.id)
     print(res)
     if res:
         text = _("Ты уже зарегестрировался, чтобы увидеть анкету свою анкету нажмите /show")
         await message.answer(text)
         return
+    text = _("На каком языке вы хотели бы объединяться с другими ИТ-специалистами? 🌍")
     await message.answer(
-        "На каком языке вы хотели бы объединяться с другими ИТ-специалистами? 🌍",
+        text,
         reply_markup=await MetodKeyboardInline.language_commnad()
     )
 
 @router.callback_query(lambda c: c.data in {
     "en", "es", "de",
     "uk", "ru",
-    "kk"
+    "kk", "ky", "it"
 })
 async def start_command(callback: CallbackQuery):
     await callback.answer()

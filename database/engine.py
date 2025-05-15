@@ -22,3 +22,5 @@ class Base(DeclarativeBase):
     type_anotation_map = {
         str_256: String(256)
     }
+
+

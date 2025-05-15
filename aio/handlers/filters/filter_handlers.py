@@ -7,6 +7,16 @@ from database.metod_for_database import MetodSQL
 from aio.keyboards.filter_keyboard.filter_keyboarad import FilterButton
 from text_translete.translate import get_translator
 
+
+async def get_or_init_fsm_list(state: FSMContext, key: str) -> list[str]:
+    data = await state.get_data()
+    value = data.get(key)
+    if value is None:
+        value = []
+        await state.update_data({key: value})
+    return value
+
+
 @router.message(Command("filter"))
 async def filter_command(message: Message, state: FSMContext):
     lang_param = await MetodSQL.get_language(message.from_user.id)
@@ -16,7 +26,9 @@ async def filter_command(message: Message, state: FSMContext):
     _ = translator.gettext
 
     data = await state.get_data()
-    selected = data.get("language", [])
+    # selected = data.get("industries", [])
+
+    selected = await get_or_init_fsm_list(state, "industries")
 
     text = _("Выберите индустрию для фильтрации анкет:")
     await message.answer(text, reply_markup=await FilterButton.filter_industy(message.from_user.id, selected))
@@ -31,7 +43,9 @@ async def next(callback: CallbackQuery, state: FSMContext):
     _ = translator.gettext
 
     data = await state.get_data()
-    selected = data.get("industries", [])
+    # selected = data.get("industries", [])
+
+    selected = await get_or_init_fsm_list(state, "industries")
 
     if selected:
         industries_str = ",".join(selected)
@@ -48,19 +62,21 @@ async def next(callback: CallbackQuery, state: FSMContext):
 @router.callback_query(lambda c: c.data.startswith("set_filter_"))
 async def toggle_filter_callback(callback: CallbackQuery, state: FSMContext):
     await callback.answer()
-    industry = callback.data.split("_", maxsplit=2)[2]
+    industry = callback.data.replace("set_filter_", "")
 
     lang_param = await MetodSQL.get_language(callback.from_user.id)
     translator = await get_translator(lang_param)
     _ = translator.gettext
 
     data = await state.get_data()
-    selected = data.get("industries", [])
+    # selected = data.get("industries", [])
+    selected = await get_or_init_fsm_list(state, "industries")
+
     page = data.get("industry_page", "left")
 
     if industry in selected:
         selected.remove(industry)
-    elif len(selected) < 3:
+    elif len(selected) < 9:
         selected.append(industry)
     else:
         await callback.answer(_("Можно выбрать не более 3 индустрий"), show_alert=True)
@@ -87,7 +103,8 @@ async def right_part(callback: CallbackQuery, state: FSMContext):
     _ = translator.gettext
 
     data = await state.get_data()
-    selected = data.get("industries", [])
+    # selected = data.get("industries", [])
+    selected = await get_or_init_fsm_list(state, "industries")
 
     text = _("Выберите индустрию для фильтрации анкет:")
     markup = await FilterButton.filter_right(selected)
@@ -104,7 +121,8 @@ async def left_part(callback: CallbackQuery, state: FSMContext):
     _ = translator.gettext
 
     data = await state.get_data()
-    selected = data.get("industries", [])
+    # selected = data.get("industries", [])
+    selected = await get_or_init_fsm_list(state, "industries")
 
     text = _("Выберите индустрию для фильтрации анкет:")
     markup = await FilterButton.filter_industy(callback.from_user.id, selected)

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-04-17 09:31+0000\n"
-"PO-Revision-Date: 2025-04-15 13:06+0000\n"
+"POT-Creation-Date: 2025-05-15 11:48+0000\n"
+"PO-Revision-Date: 2025-05-15 11:52+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
 "Language-Team: de <LL@li.org>\n"
@@ -18,145 +18,148 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.17.0\n"
 
-#: aio/func/func_profile.py:50
+#: aio/func/func_profile.py:60
+msgid "Отрасль не указана"
+msgstr ""
+
+#: aio/func/func_profile.py:71
+msgid "Язык не указан"
+msgstr "Sprache nicht angegeben"
+
+#: aio/func/func_profile.py:74
 #, python-brace-format
 msgid ""
-"Город: {city}\n"
-"Имя: {name}\n"
-"Возраст: {age}\n"
-"Описание: {desc}\n"
-"Язык: {lang}\n"
-"Отрасль: {industry}"
+"📍 Город: {city}\n"
+"👤 Имя: {name}\n"
+"🎂 Возраст: {age}\n"
+"📝 Описание: {desc}\n"
+"💻 Язык: {lang}\n"
+"💼 Отрасль: {industry}"
 msgstr ""
-"Stadt: {city}\n"
-"Name: {name}\n"
-"Alter: {age}\n"
-"Beschreibung: {desc}\n"
-"Sprache: {lang}\n"
-"Branche: {industry}"
+"📍 Stadt: {city}\n"
+"👤 Name: {name}\n"
+"🎂 Alter: {age}\n"
+"📝 Beschreibung: {desc}\n"
+"💻 Sprache: {lang}\n"
+"💼 Branche: {industry}"
 
-#: aio/func/func_profile.py:66
+#: aio/func/func_profile.py:90
 #, python-brace-format
 msgid ""
-"Город: {city}\n"
-"Имя: {name}\n"
-"Возраст: {age}\n"
-"Язык: {lang}\n"
-"Отрасль: {industry}"
+"📍 Город: {city}\n"
+"👤 Имя: {name}\n"
+"🎂 Возраст: {age}\n"
+"💻 Язык: {lang}\n"
+"💼 Отрасль: {industry}"
 msgstr ""
-"Stadt: {city}\n"
-"Name: {name}\n"
-"Alter: {age}\n"
-"Sprache: {lang}\n"
-"Branche: {industry}"
+"📍 Stadt: {city}\n"
+"👤 Name: {name}\n"
+"🎂 Alter: {age}\n"
+"💻 Sprache: {lang}\n"
+"💼 Branche: {industry}"
 
-#: aio/handlers/dislike_handlers.py:26
-msgid "Вы дизлайкнули анкету. Теперь эта анкета будет скрыта."
-msgstr "Du hast das Profil abgelehnt. Jetzt wird dieses Profil versteckt."
-
-#: aio/handlers/callback_handlers/callback_profile.py:163
+#: aio/handlers/callback_handlers/callback_profile.py:158
 #: aio/handlers/language_handler.py:17
 msgid "На каком языке вы хотели бы объединяться с другими ИТ-специалистами? 🌍"
-msgstr ""
-"In welcher Sprache möchtest du dich mit anderen IT-Spezialisten "
-"verbinden? 🌍"
+msgstr "In welcher Sprache möchten Sie sich mit anderen IT-Spezialisten vernetzen? 🌍"
 
-#: aio/handlers/callback_handlers/callback_profile.py:183
+#: aio/handlers/callback_handlers/callback_profile.py:178
 #: aio/handlers/language_handler.py:35
 msgid "Язык обновлен"
-msgstr "Sprache wurde aktualisiert"
+msgstr "Sprache aktualisiert"
 
-#: aio/handlers/like_handlers.py:63 aio/handlers/like_handlers.py:68
-#: aio/handlers/search_handlers.py:48
-msgid "Продолжить просмотр анкет"
-msgstr "Weiter mit der Profilansicht"
+#: aio/handlers/like_handlers.py:73 aio/handlers/like_handlers.py:78
+msgid "🔁 Продолжить просмотр анкет"
+msgstr "🔁 Weitere Profile ansehen"
 
-#: aio/handlers/like_handlers.py:64 aio/handlers/like_handlers.py:69
-msgid "Перейти в профиль"
-msgstr "Zum Profil gehen"
+#: aio/handlers/like_handlers.py:74 aio/handlers/like_handlers.py:79
+msgid "👤 Перейти в профиль"
+msgstr "👤 Zum Profil wechseln"
 
-#: aio/handlers/like_handlers.py:72 aio/handlers/like_handlers.py:74
+#: aio/handlers/like_handlers.py:82 aio/handlers/like_handlers.py:85
 #, python-brace-format
 msgid "✨ У вас взаимный лайк с {name}!"
-msgstr "✨ Du hast ein gegenseitiges Like mit {name}!"
+msgstr "✨ Ihr habt ein gegenseitiges Like mit {name}!"
 
-#: aio/handlers/like_handlers.py:106
-msgid "Вас лайкнули! Хотите посмотреть анкету?"
-msgstr "Du wurdest geliked! Möchtest du das Profil ansehen?"
+#: aio/handlers/like_handlers.py:139
+msgid "✨ Вас лайкнули! Хотите посмотреть анкету?"
+msgstr "✨ Jemand hat Sie geliket! Möchten Sie das Profil ansehen?"
 
-#: aio/handlers/like_handlers.py:112 aio/handlers/search_handlers.py:41
-msgid "Посмотреть анкету"
-msgstr "Profil ansehen"
-
-#: aio/handlers/like_handlers.py:130
-msgid "Ошибка при лайке. Попробуйте позже."
-msgstr "Fehler beim Liken. Versuche es später nochmal."
+#: aio/handlers/like_handlers.py:142
+msgid "👀 Посмотреть анкету"
+msgstr "👀 Profil ansehen"
 
 #: aio/handlers/profile_handlers.py:30
 msgid "Произошла ошибка при загрузке профиля."
-msgstr "Fehler beim Laden des Profils."
+msgstr "Beim Laden des Profils ist ein Fehler aufgetreten."
 
-#: aio/handlers/search_handlers.py:37 aio/handlers/start_handlers/start.py:154
+#: aio/handlers/search_handlers.py:41 aio/handlers/start_handlers/start.py:156
 msgid "Ответьте на анкету, вас лайкнули!"
-msgstr "Beantworte das Profil, du wurdest geliked!"
+msgstr "Beantworten Sie das Profil – jemand hat Sie geliket!"
 
-#: aio/handlers/search_handlers.py:54
+#: aio/handlers/search_handlers.py:43
+msgid "Посмотреть анкету"
+msgstr "Profil ansehen"
+
+#: aio/handlers/search_handlers.py:51
+msgid "Продолжить просмотр анкет"
+msgstr "Weitere Profile ansehen"
+
+#: aio/handlers/search_handlers.py:57
 msgid "Продолжаем просмотр анкет..."
-msgstr "Weiter mit der Profilansicht..."
+msgstr "Wir machen mit den Profilen weiter..."
 
-#: aio/handlers/search_handlers.py:68
+#: aio/handlers/search_handlers.py:73
 msgid "Нет найденных анкет"
 msgstr "Keine Profile gefunden"
 
-#: aio/handlers/search_handlers.py:81
+#: aio/handlers/search_handlers.py:84
 msgid "Произошла ошибка при поиске анкет."
-msgstr "Fehler bei der Profilsuche."
+msgstr "Beim Suchen der Profile ist ein Fehler aufgetreten."
 
-#: aio/handlers/callback_handlers/callback_profile.py:31
-#: aio/handlers/callback_handlers/callback_profile.py:122
 #: aio/handlers/show_handlers.py:27
-msgid "У вас покачто нету анкеты"
-msgstr "Du hast noch kein Profil"
+msgid "У вас пока что нету анкеты"
+msgstr "Sie haben noch kein Profil erstellt"
 
 #: aio/handlers/callback_handlers/callback_profile.py:36
-#: aio/handlers/callback_handlers/callback_profile.py:127
+#: aio/handlers/callback_handlers/callback_profile.py:122
 #: aio/handlers/show_handlers.py:33
 msgid "Произошла ошибка при загрузке профиля. Попробуйте снова позже."
-msgstr "Fehler beim Laden des Profils. Versuche es später nochmal."
+msgstr "Beim Laden des Profils ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut."
 
-#: aio/handlers/view_handlers.py:52
+#: aio/handlers/view_handlers.py:56
 msgid "Ошибка: профиль не найден!"
 msgstr "Fehler: Profil nicht gefunden!"
 
 #: aio/handlers/callback_handlers/callback_change_register.py:28
 msgid "Введите свой город еще раз🌆"
-msgstr "Gib deine Stadt nochmal ein🌆"
+msgstr "Geben Sie Ihre Stadt erneut ein 🌆"
 
 #: aio/handlers/callback_handlers/callback_change_register.py:45
 msgid "Введите ваше имя еще раз"
-msgstr "Gib deinen Namen nochmal ein"
+msgstr "Geben Sie Ihren Namen erneut ein"
 
 #: aio/handlers/callback_handlers/callback_change_register.py:62
 msgid "Введите ваш возраст"
-msgstr "Gib dein Alter ein"
+msgstr "Geben Sie Ihr Alter ein"
 
 #: aio/handlers/callback_handlers/callback_change_register.py:79
 msgid "Введите новое описание🖊"
-msgstr "Gib eine neue Beschreibung ein🖊"
+msgstr "Geben Sie eine neue Beschreibung ein 🖊"
 
 #: aio/handlers/callback_handlers/callback_change_register.py:96
-#: aio/handlers/callback_handlers/skip_callback.py:24
+#: aio/handlers/callback_handlers/skip_callback.py:27
 msgid "Какой у вас язык программирования?"
-msgstr "Welche Programmiersprache verwendest du?"
+msgstr "Welche Programmiersprache beherrschen Sie?"
 
 #: aio/handlers/callback_handlers/callback_change_register.py:112
 msgid "Какое у вас направление?"
-msgstr "Welches Fachgebiet hast du?"
+msgstr "Was ist Ihre Richtung?"
 
 #: aio/handlers/callback_handlers/callback_change_register.py:125
-#: aio/handlers/callback_handlers/callback_for_industry.py:24
+#: aio/handlers/callback_handlers/callback_for_industry.py:95
 msgid "Добавьте фото профиля📸"
-msgstr "Füge ein Profilbild hinzu📸"
+msgstr "Fügen Sie ein Profilfoto hinzu📸"
 
 #: aio/handlers/callback_handlers/callback_change_register.py:163
 msgid "Ты перезарегистрировался! Вот как выглядит твоя анкета."
@@ -164,7 +167,7 @@ msgstr "Du hast dich neu registriert! So sieht dein Profil aus."
 
 #: aio/handlers/callback_handlers/callback_changeanketa.py:28
 msgid "Выбирете какой именно параметр хотите изменить"
-msgstr "Wähle, welchen Parameter du ändern möchtest"
+msgstr "Wählen Sie, welchen Parameter Sie ändern möchten"
 
 #: aio/handlers/callback_handlers/callback_changeanketa.py:56
 msgid "❌ Такого параметра для изменения не существует 😉"
@@ -173,137 +176,100 @@ msgstr "❌ Dieser Parameter kann nicht geändert werden 😉"
 #: aio/handlers/callback_handlers/callback_changeanketa.py:66
 #: aio/handlers/callback_handlers/callback_changeanketa.py:71
 #: aio/handlers/callback_handlers/callback_changeanketa.py:79
-#: aio/handlers/callback_handlers/callback_changeanketa.py:84
 #, python-brace-format
 msgid ""
 "Введите новое значение для {field}\n"
 "Текущее: {current}"
 msgstr ""
-"Gib einen neuen Wert für {field} ein\n"
-"Aktuell: {current}"
-
-#: aio/handlers/callback_handlers/callback_changeanketa.py:90
-#, python-brace-format
-msgid ""
-"Какое новое значение вы хотите определить?\n"
-"Текущее {current}\n"
-"1) Backend\n"
-"2) Front-end\n"
-"3) FullStack\n"
-"4) GameDev\n"
-"5) MobileDev"
-msgstr ""
-"Welchen neuen Wert möchtest du festlegen?\n"
-"Aktuell {current}\n"
-"1) Backend\n"
-"2) Front-end\n"
-"3) FullStack\n"
-"4) GameDev\n"
-"5) MobileDev"
+"Geben Sie einen neuen Wert für {field} ein\n"
+"Aktueller: {current}"
 
 #: aio/handlers/callback_handlers/callback_changeanketa.py:97
 msgid "Загрузите новое изображение📸"
-msgstr "Lade ein neues Bild hoch📸"
+msgstr "Laden Sie ein neues Bild hoch📸"
 
 #: aio/handlers/callback_handlers/callback_changeanketa.py:132
 #, python-brace-format
 msgid "Ваш возраст обновлен: {age} ✅"
-msgstr "Dein Alter wurde aktualisiert: {age} ✅"
+msgstr "Ihr Alter wurde aktualisiert: {age} ✅"
 
-#: aio/handlers/callback_handlers/callback_changeanketa.py:137
+#: aio/handlers/callback_handlers/callback_changeanketa.py:138
 msgid "❌ Не удалось обновить возраст. Пожалуйста, попробуйте снова."
-msgstr ""
-"❌ Alter konnte nicht aktualisiert werden. Bitte versuche es später "
-"nochmal."
+msgstr "❌ Alter konnte nicht aktualisiert werden. Bitte versuchen Sie es erneut."
 
-#: aio/handlers/callback_handlers/callback_changeanketa.py:142
+#: aio/handlers/callback_handlers/callback_changeanketa.py:143
 msgid "❌ Пожалуйста, введите корректный возраст (целое число)."
-msgstr "❌ Bitte gib ein korrektes Alter ein (ganzzahlige Zahl)."
+msgstr "❌ Bitte geben Sie ein gültiges Alter ein (ganze Zahl)."
 
-#: aio/handlers/callback_handlers/callback_changeanketa.py:157
+#: aio/handlers/callback_handlers/callback_changeanketa.py:160
 msgid "❌ Вы не отправили фото. Пожалуйста, отправьте фото."
-msgstr "❌ Du hast kein Bild gesendet. Bitte sende ein Bild."
+msgstr "❌ Sie haben kein Foto gesendet. Bitte senden Sie ein Foto."
 
-#: aio/handlers/callback_handlers/callback_changeanketa.py:164
+#: aio/handlers/callback_handlers/callback_changeanketa.py:167
 msgid "❌ Произошла ошибка при обработке фото, попробуйте снова."
-msgstr "❌ Fehler bei der Bildbearbeitung, versuche es später nochmal."
+msgstr "❌ Beim Verarbeiten des Fotos ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut."
 
-#: aio/handlers/callback_handlers/callback_changeanketa.py:178
+#: aio/handlers/callback_handlers/callback_changeanketa.py:181
 msgid "✅ Изображение успешно обновлено!"
-msgstr "✅ Bild wurde erfolgreich aktualisiert!"
+msgstr "✅ Bild erfolgreich aktualisiert!"
 
-#: aio/handlers/callback_handlers/callback_changeanketa.py:189
+#: aio/handlers/callback_handlers/callback_changeanketa.py:192
 msgid "❌ Произошла ошибка при обработке изображения, попробуйте снова."
-msgstr "❌ Fehler bei der Bildbearbeitung, versuche es später nochmal."
+msgstr "❌ Fehler bei der Bildverarbeitung. Bitte versuchen Sie es erneut."
 
-#: aio/handlers/callback_handlers/callback_changeanketa.py:211
-#, python-brace-format
-msgid "Вы выбрали индустрию: {industry_value} ✅"
-msgstr "Du hast die Branche ausgewählt: {industry_value} ✅"
+#: aio/handlers/callback_handlers/callback_changeanketa.py:208
+msgid "Обновление прошло успешно ✅"
+msgstr "Aktualisierung erfolgreich ✅"
 
-#: aio/handlers/callback_handlers/callback_changeanketa.py:217
-msgid "❌ Не удалось обновить индустрию. Пожалуйста, попробуйте снова."
-msgstr ""
-"❌ Es konnte die Branche nicht aktualisiert werden. Bitte versuche es "
-"erneut."
+#: aio/handlers/callback_handlers/callback_changeanketa.py:215
+msgid "С обновлением возникли трудности 😢"
+msgstr "Bei der Aktualisierung gab es Schwierigkeiten 😢"
 
 #: aio/handlers/callback_handlers/callback_changeanketa.py:221
-msgid "❌ Неверный выбор! Пожалуйста, выберите число от 1 до 5."
-msgstr "❌ Ungültige Auswahl! Bitte wähle eine Zahl von 1 bis 5."
-
-#: aio/handlers/callback_handlers/callback_changeanketa.py:226
-msgid "❌ Пожалуйста, введите число от 1 до 5."
-msgstr "❌ Bitte gib eine Zahl von 1 bis 5 ein."
-
-#: aio/handlers/callback_handlers/callback_changeanketa.py:235
-msgid "Обновление прошло успешно ✅"
-msgstr "Das Update war erfolgreich ✅"
-
-#: aio/handlers/callback_handlers/callback_changeanketa.py:242
-msgid "С обновлением возникли трудности 😢"
-msgstr "Es gab Probleme beim Aktualisieren 😢"
-
-#: aio/handlers/callback_handlers/callback_changeanketa.py:248
 msgid "❌ Произошла ошибка. Пожалуйста, попробуйте снова.1"
-msgstr "❌ Ein Fehler ist aufgetreten. Bitte versuche es erneut."
+msgstr "❌ Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.1"
 
-#: aio/handlers/callback_handlers/callback_profile.py:55
-#: aio/handlers/filters/filter_handlers.py:23
-msgid "Сбросить фильтр"
-msgstr "Filter zurücksetzen"
+#: aio/handlers/callback_handlers/callback_for_industry.py:68
+msgid "Максимум 3"
+msgstr "Maximal 3"
 
-#: aio/handlers/callback_handlers/callback_profile.py:56
-#: aio/handlers/callback_handlers/keyboard_callback/back_button.py:16
-#: aio/keyboards/keyboard_for_start.py:54 aio/keyboards/keyboard_ref.py:33
-#: aio/keyboards/keyboard_setting.py:21
-msgid "Назад 🔙"
-msgstr "Zurück 🔙"
+#: aio/handlers/callback_handlers/callback_for_industry.py:74
+#: aio/handlers/callback_handlers/callbackhandler.py:76
+msgid "Выберите индустрии, повторное нажатие снимает выбор:"
+msgstr "Wählen Sie Branchen aus, erneut klicken hebt die Auswahl auf:"
 
-#: aio/handlers/callback_handlers/callback_profile.py:59
-#: aio/handlers/filters/filter_handlers.py:25
+#: aio/handlers/callback_handlers/callback_profile.py:31
+#: aio/handlers/callback_handlers/callback_profile.py:117
+msgid "У вас покачто нету анкеты"
+msgstr "Sie haben derzeit kein Profil"
+
+#: aio/handlers/callback_handlers/callback_profile.py:53
+#: aio/handlers/filters/filter_handlers.py:33
+#: aio/handlers/filters/filter_handlers.py:87
+#: aio/handlers/filters/filter_handlers.py:109
+#: aio/handlers/filters/filter_handlers.py:127
 msgid "Выберите индустрию для фильтрации анкет:"
-msgstr "Wähle eine Branche zur Filterung der Profile:"
+msgstr "Wählen Sie eine Branche zur Filterung der Profile:"
 
-#: aio/handlers/callback_handlers/callback_profile.py:74
-#: aio/handlers/filters/filter_handlers.py:38
+#: aio/handlers/callback_handlers/callback_profile.py:69
 #, python-brace-format
 msgid ""
 "Фильтр установлен: {industry}.\n"
 "Нажмите /show для поиска анкет."
 msgstr ""
 "Filter gesetzt: {industry}.\n"
-"Drücke /show, um nach Profilen zu suchen."
+"Geben Sie /show ein, um nach Profilen zu suchen."
 
-#: aio/handlers/callback_handlers/callback_profile.py:89
-#: aio/handlers/filters/filter_handlers.py:51
+#: aio/handlers/callback_handlers/callback_profile.py:84
+#: aio/handlers/filters/filter_handlers.py:143
 msgid ""
 "Фильтр сброшен. Теперь ищем все анкеты  \n"
 "/show"
 msgstr ""
-"Filter zurückgesetzt. Jetzt suchen wir alle Profile \n"
+"Filter zurückgesetzt. Jetzt werden alle Profile angezeigt  \n"
 "/show"
 
-#: aio/handlers/callback_handlers/callback_profile.py:108
+#: aio/handlers/callback_handlers/callback_profile.py:103
 #: aio/handlers/start_handlers/start.py:70
 msgid ""
 "🚫 Анкета деактивирована.\n"
@@ -311,19 +277,18 @@ msgid ""
 "\n"
 "Чтобы снова включить анкету и искать партнёров — введите /activate"
 msgstr ""
-"🚫 Das Profil wurde deaktiviert.\n"
-"Viel Glück mit deinem Start-up! 💡\n"
+"🚫 Ihr Profil wurde deaktiviert.\n"
+"Viel Erfolg mit Ihrem Startup! 💡\n"
 "\n"
-"Um das Profil wieder zu aktivieren und nach Partnern zu suchen, gib "
-"/activate ein."
+"Um Ihr Profil wieder zu aktivieren und Partner zu suchen, geben Sie /activate ein"
 
-#: aio/handlers/callback_handlers/callback_profile.py:115
+#: aio/handlers/callback_handlers/callback_profile.py:110
 #: aio/handlers/start_handlers/start.py:79
 #: aio/handlers/start_handlers/start.py:102
 msgid "Произошла ошибка. Попробуйте позже."
-msgstr "Ein Fehler ist aufgetreten. Bitte versuche es später."
+msgstr "Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut."
 
-#: aio/handlers/callback_handlers/callback_profile.py:140
+#: aio/handlers/callback_handlers/callback_profile.py:135
 #: aio/handlers/ref_handlers/callback_ref/keyboard_callback.py:18
 #: aio/handlers/ref_handlers/ref_handler.py:20
 msgid ""
@@ -335,46 +300,174 @@ msgid ""
 msgstr ""
 "👋 Hallo!\n"
 "\n"
-"Hier kannst du deinen Referral-Code bekommen. Gib ihn deinem Freund, "
-"damit er deinen Code bei der Registrierung angeben kann. Dadurch erhältst"
-" du einen Boost für dein Profil! 🚀"
+"Hier erhalten Sie Ihren Empfehlungscode. Geben Sie ihn einem Freund, damit "
+"er ihn bei der Registrierung angeben kann. Dadurch erhalten Sie einen Profil-Boost! 🚀"
 
-#: aio/handlers/callback_handlers/callback_back/callback_main_menu.py:39
-#: aio/handlers/callback_handlers/callback_back/callback_main_menu.py:52
-#: aio/handlers/callback_handlers/callback_back/callback_main_menu.py:64
-#: aio/handlers/callback_handlers/callback_settings.py:20
+#: aio/handlers/callback_handlers/callback_back/callback_main_menu.py:38
+#: aio/handlers/callback_handlers/callback_back/callback_main_menu.py:51
+#: aio/handlers/callback_handlers/callback_back/callback_main_menu.py:63
+#: aio/handlers/callback_handlers/callback_settings.py:19
 msgid "Настройки:"
 msgstr "Einstellungen:"
 
-#: aio/handlers/callback_handlers/callbackhandler.py:37
-#: aio/handlers/callback_handlers/callbackhandler.py:79
-msgid "Чем вы занимаетесь?"
-msgstr "Was machst du?"
+#: aio/handlers/callback_handlers/callbackhandler.py:43
+msgid "Максимум 2"
+msgstr "Maximal 2"
 
-#: aio/handlers/callback_handlers/callbackhandler.py:45
+#: aio/handlers/callback_handlers/callbackhandler.py:65
+msgid "Выберите хотя бы один язык"
+msgstr "Wählen Sie mindestens eine Sprache"
+
+#: aio/handlers/callback_handlers/callbackhandler.py:72
+msgid ", "
+msgstr ", "
+
+#: aio/handlers/callback_handlers/callbackhandler.py:85
 msgid "❌ Произошла ошибка. Попробуйте еще раз."
 msgstr "❌ Ein Fehler ist aufgetreten. Bitte versuche es erneut."
 
-#: aio/handlers/callback_handlers/callbackhandler.py:59
-#: aio/handlers/callback_handlers/callbackhandler.py:93
-msgid "Напишите на каком языке вы пишете"
-msgstr "Schreibe in welcher Sprache du schreibst."
+#: aio/handlers/callback_handlers/change_lang_ind/change_industry.py:36
+msgid "❌ Нельзя очистить поле индустрии. Пожалуйста, выберите новое значение."
+msgstr "❌ Das Feld „Branche“ kann nicht geleert werden. Bitte wähle einen neuen Wert."
+
+#: aio/handlers/callback_handlers/change_lang_ind/change_industry.py:42
+#, python-brace-format
+msgid ""
+"Какое новое значение вы хотите определить?\n"
+"Текущее: {current}\n"
+"1) Backend\n"
+"2) Front-end\n"
+"3) FullStack\n"
+"4) GameDev\n"
+"5) MobileDev\n"
+"6) AIDev\n"
+"7) Telegram Bots\n"
+"8) AppDev\n"
+"9) OSDev\n"
+"10) Cybersecurity\n"
+"11) Frameworks\n"
+"12) BlockchainDev\n"
+"13) Удалить индустрию✍️ Напиши номер индустрии сообщением."
+msgstr ""
+"Welchen neuen Wert möchtest du festlegen?\n"
+"Aktuell: {current}\n"
+"1) Backend\n"
+"2) Front-end\n"
+"3) FullStack\n"
+"4) GameDev\n"
+"5) MobileDev\n"
+"6) AIDev\n"
+"7) Telegram Bots\n"
+"8) AppDev\n"
+"9) OSDev\n"
+"10) Cybersecurity\n"
+"11) Frameworks\n"
+"12) BlockchainDev\n"
+"13) Branche entfernen ✍️ Sende die Nummer der Branche als Nachricht."
+
+#: aio/handlers/callback_handlers/change_lang_ind/change_industry.py:102
+#: aio/handlers/callback_handlers/change_lang_ind/change_industry.py:213
+msgid "❌ Неверный выбор! Пожалуйста, выберите число от 1 до 12."
+msgstr "❌ Ungültige Auswahl! Bitte wähle eine Zahl von 1 bis 12."
+
+#: aio/handlers/callback_handlers/change_lang_ind/change_industry.py:113
+msgid "Вы убрали выбор индустрии ✅"
+msgstr "Du hast die Branchenauswahl entfernt ✅"
+
+#: aio/handlers/callback_handlers/change_lang_ind/change_industry.py:114
+#: aio/handlers/callback_handlers/change_lang_ind/change_industry.py:223
+#, python-brace-format
+msgid "Вы выбрали индустрию: {industry_value} ✅"
+msgstr "Du hast die Branche gewählt: {industry_value} ✅"
+
+#: aio/handlers/callback_handlers/change_lang_ind/change_industry.py:125
+#: aio/handlers/callback_handlers/change_lang_ind/change_industry.py:231
+msgid "❌ Не удалось обновить индустрию. Попробуйте снова."
+msgstr "❌ Branche konnte nicht aktualisiert werden. Bitte versuche es erneut."
+
+#: aio/handlers/callback_handlers/change_lang_ind/change_industry.py:158
+#, python-brace-format
+msgid ""
+"Какое новое значение вы хотите определить?\n"
+"Текущее: {current}\n"
+"1) Backend\n"
+"2) Front-end\n"
+"3) FullStack\n"
+"4) GameDev\n"
+"5) MobileDev\n"
+"6) AIDev\n"
+"7) Telegram Bots\n"
+"8) AppDev\n"
+"9) OSDev\n"
+"10) Cybersecurity\n"
+"11) Frameworks\n"
+"12) BlockchainDev\n"
+"✍️ Напиши номер индустрии сообщением."
+msgstr ""
+"Welchen neuen Wert möchtest du festlegen?\n"
+"Aktuell: {current}\n"
+"1) Backend\n"
+"2) Front-end\n"
+"3) FullStack\n"
+"4) GameDev\n"
+"5) MobileDev\n"
+"6) AIDev\n"
+"7) Telegram Bots\n"
+"8) AppDev\n"
+"9) OSDev\n"
+"10) Cybersecurity\n"
+"11) Frameworks\n"
+"12) BlockchainDev\n"
+"✍️ Sende die Nummer der Branche als Nachricht."
+
+#: aio/handlers/callback_handlers/change_lang_ind/change_industry.py:236
+msgid "❌ Пожалуйста, введите число от 1 до 13."
+msgstr "❌ Bitte gib eine Zahl von 1 bis 13 ein."
+
+#: aio/handlers/callback_handlers/change_lang_ind/change_industry.py:278
+#: aio/handlers/callback_handlers/change_lang_ind/change_industry.py:328
+#, python-brace-format
+msgid "Ваше значення мови оновлено: {new_language} ✅"
+msgstr "Deine Spracheinstellung wurde aktualisiert: {new_language} ✅"
+
+#: aio/handlers/callback_handlers/change_lang_ind/change_industry.py:286
+#: aio/handlers/callback_handlers/change_lang_ind/change_industry.py:337
+msgid "❌ Не вдалося оновити мову. Спробуйте ще раз."
+msgstr "❌ Sprache konnte nicht aktualisiert werden. Bitte versuche es erneut."
+
+#: aio/handlers/callback_handlers/keyboard_callback/back_button.py:16
+#: aio/keyboards/keyboard_for_start.py:63 aio/keyboards/keyboard_ref.py:33
+#: aio/keyboards/keyboard_setting.py:21
+msgid "Назад 🔙"
+msgstr "Zurück 🔙"
+
+#: aio/handlers/filters/filter_handlers.py:56
+#, python-brace-format
+msgid ""
+"Фильтры сохранены: {industries}\n"
+"Нажмите /show для просмотра анкет."
+msgstr ""
+"Filter gespeichert: {industries}\n"
+"Gib /show ein, um die Profile zu sehen."
+
+#: aio/handlers/filters/filter_handlers.py:82
+msgid "Можно выбрать не более 3 индустрий"
+msgstr "Du kannst nicht mehr als 3 Branchen auswählen"
 
 #: aio/handlers/ref_handlers/admin_panel/admin.py:25
 msgid ""
 "Вы не зарегистрированы. Пожалуйста, зарегистрируйтесь перед "
 "использованием, введите команду /start"
 msgstr ""
-"Du bist nicht registriert. Bitte registriere dich zuerst mit dem Befehl "
-"/start"
+"Du bist nicht registriert. Bitte registriere dich, bevor du den Bot nutzt – gib den Befehl /start ein."
 
 #: aio/handlers/ref_handlers/callback_ref/callback_pastet_code.py:25
 msgid "Введите ваш реферальный код"
-msgstr "Gib deinen Referral-Code ein"
+msgstr "Bitte gib deinen Empfehlungscode ein"
 
 #: aio/handlers/ref_handlers/callback_ref/callback_pastet_code.py:47
 msgid "Вы ввели свой же код😅"
-msgstr "Du hast deinen eigenen Code eingegeben😅"
+msgstr "Du hast deinen eigenen Code eingegeben 😅"
 
 #: aio/handlers/ref_handlers/callback_ref/callback_pastet_code.py:54
 msgid ""
@@ -382,9 +475,9 @@ msgid ""
 "\n"
 "<i>Прости, но его можно вводить только один раз 🫠</i>"
 msgstr ""
-"Du hast den Referral-Code schon eingegeben\n"
+"Du hast bereits einen Empfehlungscode eingegeben\n"
 "\n"
-"<i>Es tut mir leid, aber du kannst ihn nur einmal eingeben 🫠</i>"
+"<i>Sorry, aber man kann ihn nur einmal eingeben 🫠</i>"
 
 #: aio/handlers/ref_handlers/callback_ref/callback_pastet_code.py:64
 #, python-brace-format
@@ -395,11 +488,11 @@ msgid ""
 "\n"
 "Теперь вас ждет <b>буст к вашей анкете</b>!"
 msgstr ""
-"Deinen Referral-Link hat jemand verwendet\n"
+"Dein Empfehlungscode wurde verwendet\n"
 "\n"
-"<i>Benutzer: @{username}! 🥳</i>\n"
+"<i>Nutzer: @{username}! 🥳</i>\n"
 "\n"
-"Jetzt erwartet dich ein <b>Boost für dein Profil</b>!"
+"Jetzt bekommst du einen <b>Boost für dein Profil</b>!"
 
 #: aio/handlers/ref_handlers/callback_ref/callback_pastet_code.py:74
 msgid "Код принят!"
@@ -408,7 +501,7 @@ msgstr "Code akzeptiert!"
 #: aio/handlers/ref_handlers/callback_ref/callback_pastet_code.py:79
 #, python-brace-format
 msgid "Не наебывай меня {username}, даже не пытайся наебать"
-msgstr "Täusche mich nicht, {username}, versuche es nicht einmal!"
+msgstr "Verarsch mich nicht, {username}, nicht mal versuchen"
 
 #: aio/handlers/ref_handlers/callback_ref/callback_ref.py:33
 #, python-brace-format
@@ -419,7 +512,7 @@ msgid ""
 "\n"
 "🔹 Поделитесь им с друзьями, чтобы получить бонусы! 😉"
 msgstr ""
-"🎉 <b>Du hast deinen Referral-Code bereits erhalten!</b>\n"
+"🎉 <b>Du hast bereits deinen Empfehlungscode erhalten!</b>\n"
 "\n"
 "<code>{code}</code>\n"
 "\n"
@@ -434,15 +527,15 @@ msgid ""
 "\n"
 "🔹 Отправь его друзьям, чтобы получить бонусы! 🚀"
 msgstr ""
-"🎁 <b>Hier ist dein Referral-Code!</b>\n"
+"🎁 <b>Hier ist dein Empfehlungscode!</b>\n"
 "\n"
 "<code>{user_code}</code>\n"
 "\n"
-"🔹 Schicke ihn deinen Freunden, um Boni zu erhalten! 🚀"
+"🔹 Schick ihn deinen Freunden, um Boni zu erhalten! 🚀"
 
 #: aio/handlers/ref_handlers/ref_keyboards/keyboard_for_ref.py:17
 msgid "Вернуться назад"
-msgstr "Zurück"
+msgstr "Zurückkehren"
 
 #: aio/handlers/start_handlers/start.py:94
 msgid ""
@@ -450,23 +543,21 @@ msgid ""
 "Теперь другие пользователи смогут увидеть её и связаться с вами 🔍"
 msgstr ""
 "✅ Dein Profil ist wieder aktiv!\n"
-"Jetzt können andere Benutzer es sehen und mit dir Kontakt aufnehmen 🔍"
+"Andere Nutzer können es jetzt sehen und dich kontaktieren 🔍"
 
-#: aio/handlers/start_handlers/start.py:122
+#: aio/handlers/start_handlers/start.py:123
 msgid "Анкета пропущена."
-msgstr "Das Profil wurde übersprungen."
+msgstr "Fragebogen übersprungen."
 
-#: aio/handlers/start_handlers/start.py:148 aio/services/match_service.py:76
+#: aio/handlers/start_handlers/start.py:150 aio/services/match_service.py:118
 msgid "Анкеты закончились, подождите пока появятся новые и нажмите /show"
-msgstr ""
-"Es sind keine Profile mehr vorhanden, warte, bis neue erscheinen, und "
-"drücke /show"
+msgstr "Keine Profile mehr verfügbar. Bitte warten Sie, bis neue erscheinen, und drücken Sie /show"
 
-#: aio/handlers/start_handlers/start.py:176
+#: aio/handlers/start_handlers/start.py:178
 msgid "Ты уже зарегестрировался, чтобы увидеть анкету свою анкету нажмите /show"
-msgstr "Du hast dich bereits registriert, um dein Profil zu sehen, drücke /show"
+msgstr "Du bist bereits registriert. Um dein Profil zu sehen, drücke /show"
 
-#: aio/handlers/start_handlers/start.py:205
+#: aio/handlers/start_handlers/start.py:208
 msgid ""
 "🔥 <b>Приветствуем тебя в PairCode!</b> 🔥\n"
 "\n"
@@ -484,112 +575,113 @@ msgid ""
 msgstr ""
 "🔥 <b>Willkommen bei PairCode!</b> 🔥\n"
 "\n"
-"🚀 Hier kannst du einen Partner, Assistenten oder Gleichgesinnten für die "
-"gemeinsame Arbeit an Projekten finden!\n"
-"🤝 Schließe dich mit Profis zusammen, teile Ideen und erschaffe coole "
-"Dinge gemeinsam!\n"
+"🚀 Hier kannst du einen Partner, Helfer oder Gleichgesinnten finden, um gemeinsam an Projekten zu arbeiten!\n"
+"🤝 Vernetze dich mit Profis, teile Ideen und erschaffe gemeinsam großartige Dinge!\n"
 "\n"
 "💡 <b>PairCode</b> ist der Ort, an dem große Projekte beginnen!\n"
 "\n"
-"🎁 Nach der Registrierung kannst du den <b>Referral-Code deines "
-"Freundes</b> eingeben oder deinen eigenen <b>teilen</b> mit dem Befehl "
-"<code>/ref</code>.\n"
+"🎁 Nach der Registrierung kannst du <b>den Empfehlungscode eines Freundes eingeben</b> oder <b>deinen eigenen teilen</b> mit dem Befehl <code>/ref</code>.\n"
 "\n"
-"🛠 <b>Bist du bereit zu starten?</b> Dann registriere dich und los geht’s!"
-" 👇"
+"🛠 <b>Bist du bereit?</b> Dann registriere dich und leg los! 👇"
 
-#: aio/handlers/start_handlers/start.py:231
+#: aio/handlers/start_handlers/start.py:235
 msgid "Напишите из какого вы города ?🌆"
 msgstr "Aus welcher Stadt kommst du? 🌆"
 
-#: aio/handlers/start_handlers/start.py:253
+#: aio/handlers/start_handlers/start.py:257
 msgid "Как вас зовут?"
-msgstr "Wie heißt du?"
+msgstr "Wie ist dein Name?"
 
-#: aio/handlers/start_handlers/start.py:270
+#: aio/handlers/start_handlers/start.py:274
 msgid "Сколько вам лет ?🧓👵"
 msgstr "Wie alt bist du? 🧓👵"
 
-#: aio/handlers/start_handlers/start.py:288
+#: aio/handlers/start_handlers/start.py:293
 msgid "Напишите описание для профиля🖊"
-msgstr "Schreibe eine Beschreibung für dein Profil🖊"
+msgstr "Schreibe eine Beschreibung für dein Profil 🖊"
 
-#: aio/handlers/start_handlers/start.py:307
+#: aio/handlers/start_handlers/start.py:315
 msgid "Какой у вас язык программирования?👨‍💻"
-msgstr "Welche Programmiersprache beherrscht du? 👨‍💻"
+msgstr "Welche Programmiersprache nutzt du? 👨‍💻"
 
-#: aio/handlers/start_handlers/start.py:325
+#: aio/handlers/start_handlers/start.py:333
 #, python-brace-format
 msgid "Вы выбрали {safe_text}, это точный ответ?"
-msgstr "Du hast {safe_text} gewählt, ist das die richtige Antwort?"
+msgstr "Du hast {safe_text} gewählt. Ist das korrekt?"
 
-#: aio/handlers/start_handlers/start.py:364
+#: aio/handlers/start_handlers/start.py:374
 msgid ""
-"\n"
-"    Ты зарегестрировался !\n"
-"От как выглядит твоя анкета!"
+"Ты зарегестрировался !\n"
+"Вот как выглядит твоя анкета!"
 msgstr ""
-"\n"
-"    Du hast dich registriert!\n"
-"Das sieht dein Profil aus!"
+"Du bist registriert!\n"
+"So sieht dein Profil aus!"
 
-#: aio/keyboards/keyboard_change.py:15
+# ІНШІ ПОВІДОМЛЕННЯ:
+
+#: aio/keyboards/keyboard_change.py:15 aio/keyboards/keyboard_change.py:16
+#: aio/keyboards/keyboard_change.py:17 aio/keyboards/keyboard_change.py:34
+#: aio/keyboards/keyboard_change.py:35
+msgid "Не выбрано"
+msgstr "Nicht ausgewählt"
+
+#: aio/keyboards/keyboard_change.py:51
 msgid "Город 🌇"
 msgstr "Stadt 🌇"
 
-#: aio/keyboards/keyboard_change.py:16
+#: aio/keyboards/keyboard_change.py:52
 msgid "Имя 📝"
 msgstr "Name 📝"
 
-#: aio/keyboards/keyboard_change.py:17
+#: aio/keyboards/keyboard_change.py:53
 msgid "Возраст 🎂"
 msgstr "Alter 🎂"
 
-#: aio/keyboards/keyboard_change.py:18
+#: aio/keyboards/keyboard_change.py:54
 msgid "Описание 🗒️"
 msgstr "Beschreibung 🗒️"
 
-#: aio/keyboards/keyboard_change.py:19
+#: aio/keyboards/keyboard_change.py:55
 msgid "Язык 🌐"
 msgstr "Sprache 🌐"
 
-#: aio/keyboards/keyboard_change.py:20
+#: aio/keyboards/keyboard_change.py:56
 msgid "Отрасль 🏭"
 msgstr "Branche 🏭"
 
-#: aio/keyboards/keyboard_change.py:21
+#: aio/keyboards/keyboard_change.py:57
 msgid "Фото 📸"
 msgstr "Foto 📸"
+
+#: aio/keyboards/keyboard_change.py:58
+msgid "Назад"
+msgstr "Zurück"
 
 #: aio/keyboards/keyboard_for_restart_register.py:16
 msgid "Поиск 🕵️"
 msgstr "Suche 🕵️"
 
 #: aio/keyboards/keyboard_for_restart_register.py:17
-msgid "Переписать всё 🔄"
-msgstr "Alles neu schreiben 🔄"
+msgid "Новая анкета 📝"
+msgstr "Neues Profil 📝"
 
 #: aio/keyboards/keyboard_for_restart_register.py:18
 msgid "Изменить параметры 🛠"
-msgstr "Sprache ändern 🌏"
+msgstr "Parameter ändern 🛠"
 
 #: aio/keyboards/keyboard_for_restart_register.py:19
 msgid "Настройки 🔧"
 msgstr "Einstellungen 🔧"
 
-#: aio/keyboards/keyboard_for_start.py:72
+#: aio/keyboards/keyboard_for_start.py:81
 msgid "Начать регистрацию "
-msgstr "Registrierung starten"
+msgstr "Registrierung starten "
 
-#: aio/keyboards/keyboard_for_start.py:83
-msgid "Другое"
-msgstr "Sonstiges"
-
-#: aio/keyboards/keyboard_for_start.py:104
+#: aio/keyboards/keyboard_for_start.py:110
 msgid "Да"
 msgstr "Ja"
 
-#: aio/keyboards/keyboard_for_start.py:105
+#: aio/keyboards/keyboard_for_start.py:111
 msgid "Помянять"
 msgstr "Ändern"
 
@@ -603,7 +695,7 @@ msgstr "Code verwenden"
 
 #: aio/keyboards/keyboard_setting.py:16
 msgid "Мой профиль 👤"
-msgstr "Zum Profil gehen"
+msgstr "Mein Profil 👤"
 
 #: aio/keyboards/keyboard_setting.py:17
 msgid "Фильтры 🔎"
@@ -615,15 +707,25 @@ msgstr "Profil deaktivieren 🛑"
 
 #: aio/keyboards/keyboard_setting.py:19
 msgid "Реферальный код 🎁"
-msgstr "Gib deinen Referral-Code ein"
+msgstr "Empfehlungscode 🎁"
 
 #: aio/keyboards/keyboard_setting.py:20
 msgid "Изменить язык 🌏"
 msgstr "Sprache ändern 🌏"
 
+#: aio/keyboards/keyboards_for_yes_no.py:13
+msgid "️Да"
+msgstr "Ja"
+
+#: aio/keyboards/keyboards_for_yes_no.py:14
+msgid "Нет"
+msgstr "Nein"
+
 #: aio/keyboards/skip_param.py:16
 msgid "Пропустить"
 msgstr "Überspringen"
+
+# ВАЛІДАЦІЯ:
 
 #: aio/validate/validate_register.py:15
 msgid "❌ Пожалуйста, имя должно начинаться с большой буквы"
@@ -631,7 +733,7 @@ msgstr "❌ Der Name muss mit einem Großbuchstaben beginnen"
 
 #: aio/validate/validate_register.py:20
 msgid "❌ Пожалуйста, имя должно быть не меньше двух букв"
-msgstr "❌ Der Name muss mindestens zwei Buchstaben enthalten"
+msgstr "❌ Der Name muss mindestens zwei Buchstaben lang sein"
 
 #: aio/validate/validate_register.py:25
 msgid "❌ Слишком длиное имя"
@@ -643,50 +745,37 @@ msgstr "❌ Der Name darf nur Buchstaben enthalten."
 
 #: aio/validate/validate_register.py:45
 msgid "❌ Описание слишком длинное. Текст должен быть не больше 700 символов."
-msgstr ""
-"❌ Die Beschreibung ist zu lang. Der Text darf maximal 700 Zeichen "
-"enthalten."
+msgstr "❌ Die Beschreibung ist zu lang. Sie darf maximal 700 Zeichen enthalten."
 
 #: aio/validate/validate_register.py:60
 msgid "❌ Город не может в себе местить такое количество символов."
-msgstr "❌ Die Stadt darf nicht so viele Zeichen enthalten."
+msgstr "❌ Der Stadtname ist zu lang."
 
 #: aio/validate/validate_register.py:75
 msgid "❌ Не существует языка программирования такой длинны."
-msgstr "❌ Es gibt keine Programmiersprache dieser Länge."
+msgstr "❌ Es gibt keine Programmiersprache mit so einem langen Namen."
 
 #: aio/validate/validate_register.py:88
 msgid "❌ Введите корректный возраст (только цифры)."
-msgstr "❌ Gib bitte ein korrektes Alter ein (nur Zahlen)."
+msgstr "❌ Bitte gib ein gültiges Alter ein (nur Zahlen)."
 
 #: aio/validate/validate_register.py:94
 msgid "❌ Введите реальный возраст (8-120 лет)."
-msgstr "❌ Gib bitte ein realistisches Alter ein (8-120 Jahre)."
+msgstr "❌ Bitte gib ein realistisches Alter ein (zwischen 8 und 120 Jahren)."
 
 #: aio/validate/validate_register.py:99
 msgid "Вы ввели некорректный формат сообщения."
-msgstr "❌ Gib bitte ein korrektes Alter ein (nur Zahlen)."
+msgstr "Du hast ein ungültiges Nachrichtenformat eingegeben."
 
 #: aio/validate/validate_register.py:113
 msgid "Вы отправили не фото, пожалуйста, отправьте фото."
-msgstr "Du hast kein Foto gesendet, bitte sende ein Foto."
+msgstr "Das war kein Foto. Bitte sende ein Bild."
 
 #: aio/validate/validate_register.py:119
 msgid "Произошла ошибка при обработке фото, попробуйте снова."
-msgstr ""
-"Es gab einen Fehler bei der Verarbeitung des Fotos, versuche es bitte "
-"erneut."
+msgstr "Fehler bei der Verarbeitung des Fotos. Bitte versuche es erneut."
 
 #: aio/validate/validate_register.py:133
 msgid "Введен слишком длинный текст для данной категории"
-msgstr "Der eingegebene Text ist für diese Kategorie zu lang"
-
-#~ msgid "Начать поиск"
-#~ msgstr "Suche starten"
-
-#~ msgid "Обновить анкету"
-#~ msgstr "Profil aktualisieren"
-
-#~ msgid "Изменить отдельные параметры"
-#~ msgstr "Einzelne Parameter ändern"
+msgstr "Der eingegebene Text ist zu lang für diese Kategorie"
 

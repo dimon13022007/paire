@@ -10,6 +10,7 @@ from text_translete.translate import get_translator
 from aio.keyboards.keyboard_ref import RefCode
 from aio.keyboards.keyboard_for_start import MetodKeyboardInline
 from aio.keyboards.filter_keyboard.filter_keyboarad import FilterButton
+from aio.handlers.filters.filter_handlers import get_or_init_fsm_list
 
 router = Router()
 
@@ -44,7 +45,8 @@ async def filter_callback(callback: CallbackQuery, state: FSMContext):
     print(lang_param)
 
     data = await state.get_data()
-    selected = data.get("language", [])
+    # selected = data.get("language", [])
+    selected = await get_or_init_fsm_list(state, "industries")
 
     translator = await get_translator(lang_param)
     _ = translator.gettext
@@ -163,7 +165,7 @@ async def language_hanlder(callback: CallbackQuery):
 @router.callback_query(lambda c: c.data in {
     "en", "es", "de",
     "uk", "ru",
-    "kk"
+    "kk", "ky", "it"
 })
 async def update_language(callback: CallbackQuery):
     await callback.answer("")

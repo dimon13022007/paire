@@ -364,6 +364,36 @@ class MetodSQL:
                 logging.error(f"Ошибка при обновлении {field_name}: {e}")
                 return None
 
+    @staticmethod
+    async def update_none(user_id, field_name, new_value=None):
+        async with async_sessions() as session:
+            try:
+                result = await session.execute(
+                    select(RegisterUser).where(RegisterUser.user_name == user_id)
+                )
+
+                user = result.scalars().first()
+
+                if not user:
+                    return None
+
+                if new_value is None and field_name in ["industry", "industry_1",
+                                                        "industry_2"]:
+                    if field_name == "industry":
+                        return getattr(user, field_name)
+
+                if field_name == "img" and isinstance(new_value, bytes):
+                    setattr(user, field_name, new_value)
+                else:
+                    setattr(user, field_name, new_value)
+
+                await session.commit()
+                return True
+
+            except Exception as e:
+                await session.rollback()
+                logging.error(f"Ошибка при обновлении {field_name}: {e}")
+                return None
 
     @classmethod
     async def get_user_by_id(cls, user_id: int):

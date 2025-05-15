@@ -2,7 +2,7 @@ import gettext
 
 
 
-LANGUAGES = ["uk","ru", "en", "es", "de", "kk"]
+LANGUAGES = ["uk", "ru", "en", "es", "de", "kk", "ky", "it"]
 
 
 translations = {
