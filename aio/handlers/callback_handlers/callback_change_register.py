@@ -93,8 +93,10 @@ async def change_text(message: Message, state: FSMContext):
 
     await state.update_data(text_disc=message.text)
     await state.set_state(ChangeRegisterParam.language)
+    data = await state.get_data()
+    selected = data.get("language", [])
     text = _("Какой у вас язык программирования?")
-    await message.answer(text, reply_markup= await MetodKeyboardInline.language_button(message.from_user.id))
+    await message.answer(text, reply_markup= await MetodKeyboardInline.language_button(message.from_user.id, selected))
 
 @router.message(ChangeRegisterParam.language)
 async def change_lang(message: Message, state: FSMContext):
