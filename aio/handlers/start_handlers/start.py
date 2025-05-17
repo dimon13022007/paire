@@ -322,7 +322,7 @@ async def register_discription(message: Message, state: FSMContext):
     await state.update_data(text_disc=message.text)
     await state.set_state(RegisterState.language)
     text = _("Какой у вас язык программирования?👨‍💻")
-    await message.answer(text, reply_markup= await MetodKeyboardInline.language_button(selected))
+    await message.answer(text, reply_markup= await MetodKeyboardInline.language_button(message.from_user.id,selected))
 
 
 @router.message(RegisterState.language)
